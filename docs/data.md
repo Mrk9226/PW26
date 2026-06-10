@@ -16,3 +16,4 @@
 | | **Buone Pratiche** | **Carta del Riso** | Un patto basato su 8 regole di coltivazione sostenibile sottoscritto dai risicoltori. |
 | | **Circolarità** | **Partnership** | Collaborazioni (es. Rice House, Mogu) per trasformare i sottoprodotti in materiali per bioedilizia e arredo. |
 | | **Qualità** | **Certificata** | Sistema di gestione basato su standard internazionali volontari (BRCGS, IFS, ecc.). |
+| **Certificazioni** | VEDI PDF | **Modello 231** | Adozione del Modello di Organizzazione e del Codice Etico per la prevenzione dei reati. |
