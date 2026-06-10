@@ -4,7 +4,8 @@
   --surface: #ffffff;
   --text: #1f2937;
   --muted: #6b7280;
-  --primary: #0f5c2e;
+  --primary: #418848;
+  --primary-dark: #27463b;
   --primary-soft: #daf6e2;
   --accent: #dd6b20;
   --border: rgba(31, 41, 55, 0.08);
@@ -56,8 +57,11 @@ h2,
 h3 {
   margin: 0;
   line-height: 1.15;
-  font-family: 'Marcellus', serif;
-  font-weight: 800;
+  font-family: 'Marcellus', serif;  
+}
+h2 {
+  color: var(--primary-dark);
+  font-size: 44px;  
 }
 
 p {
@@ -68,43 +72,47 @@ a {
   color: inherit;
   text-decoration: none;
 }
-
 /* Header e navigazione */
 .site-header {
-  background: rgba(255, 255, 255, 0.9);
+  background: transparent;
   position: sticky;
   top: 0;
-  z-index: 10;
-  border-bottom: 1px solid var(--border);
-  backdrop-filter: blur(12px);
+  z-index: 10; 
 }
 
 .header-inner {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 1.5rem;
+  justify-content: flex-start; 
+  align-items: center; 
+  /* Rimosso il gap per permettere la sovrapposizione millimetrica */
   padding: 1rem 0;
-  min-height: 220px;
+  min-height: 60px;
 }
 
 .brand {
   display: flex;
-  align-items: flex-start;
+  align-items: center; 
+  z-index: 2; /* Mantiene il logo sopra la barra bianca */
 }
 
 .brand-logo {
-  height: 200px;
+  height: 150px;
   width: auto;
   object-fit: contain;
   display: block;
+  filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.1));
 }
 
 .main-nav {
   display: flex;
-  align-items: flex-end;
+  align-items: center; 
   gap: 1.5rem;
-  padding-bottom: 0.5rem;
+  padding: 13px 40px 13px 70px; 
+  margin-left: -50px; 
+   z-index: 1;
+  border-radius: 100px; 
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .main-nav a {
@@ -148,9 +156,6 @@ a {
   transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
 }
 
-.button:hover {
-  transform: translateY(-2px);
-}
 
 .button-primary {
   background: var(--primary);
@@ -158,10 +163,54 @@ a {
   box-shadow: 0 18px 40px rgba(15, 92, 46, 0.16);
 }
 
-.button-secondary {
-  background: var(--surface);
-  color: var(--text);
-  border: 1px solid var(--border);
+.mio-pulsante {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 50px;
+  cursor: pointer;
+  overflow: hidden;
+  user-select: none;
+  background: var(--primary);
+  color: var(--primary-soft); 
+  border-radius: var(--radius);
+  transition: all 0.3s ease;
+}
+.mio-pulsante .testo-pulsante {
+  display: inline-block;
+  line-height: 1;
+  color: transparent;
+  transform: translateY(0);
+  transition: transform 0.5s cubic-bezier(0.25, 0.74, 0.22, 0.99), text-shadow 0.5s cubic-bezier(0.25, 0.74, 0.22, 0.99);
+  text-shadow: 0 0 0 #ffffff, 0 3rem 0 transparent;
+}
+
+.mio-pulsante::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  top: 100%;
+  width: 100%;
+  height: 0;
+  padding-top: 100%;
+  transform: translate(-50%, 0);
+  border-radius: 50% 50% 0 0;
+  background-color: var(--primary-dark);
+  transition: all 0.5s cubic-bezier(0.25, 0.74, 0.22, 0.99) 0.05s,
+    border-radius 0.5s cubic-bezier(0.25, 0.74, 0.22, 0.99) 0.22s;
+}
+.mio-pulsante:hover::before {
+  top: 0;
+  width: 101%;
+  height: 101%;
+  padding-top: 0;
+  border-radius: inherit;
+}
+.mio-pulsante:hover .testo-pulsante {
+  text-shadow: 0 -3rem 0 transparent, 0 0 0 #ffffff;
 }
 
 /* Sezioni del sito */
@@ -279,6 +328,7 @@ a {
   margin: 0;
   font-size: clamp(2.2rem, 4vw, 3rem);
   font-weight: 800;
+  color: var(--primary);
   line-height: 1;
   color: var(--text);
 }
@@ -414,10 +464,13 @@ a {
 @media (max-width: 800px) {
   .header-inner,
   .footer-inner {
-    flex-direction: column;
+   /* flex-direction: column;*/
     align-items: flex-start;
   }
 
+  .brand-logo {
+  height: 100px;
+}
   .main-nav {
     flex-wrap: wrap;
   }
