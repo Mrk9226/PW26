@@ -6,244 +6,225 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Report di Sostenibilità - Riso Gallo</title>
   <style>
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Marcellus&display=swap');
-</style>
+    @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Marcellus&display=swap');
+  </style>
   <link href="https://googleapis.com" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="bento-structure.css">
   <script defer src="script.js"></script>
 </head>
 
 <body>
 
-   <!-- Sezione intestazione e navigazione -->
-    <header class="site-header">
-      <div class="container header-inner">
-        <div class="brand">
-          <img src="img/GalloLogo.webp" alt="Logo Riso Gallo" class="brand-logo">
-        </div>
-        <nav class="main-nav">
+  <!-- Sezione intestazione e navigazione -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand"> <a href="#hero">
+          <img src="img/galloLogo.webp" alt="Logo Riso Gallo" class="brand-logo"></a>
+      </div>
+      <nav class="main-nav">
+        <a href="#vision">Visione</a>
+        <a href="#highlights">Highlights</a>
+        <a href="#report">Download</a>
+      </nav>
+      <button class="menu-toggle" aria-expanded="false" aria-label="Apri menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div class="mobile-menu">
+      <div class="mobile-menu-panel" role="dialog" aria-modal="true" aria-label="Menu di navigazione">
+        <nav class="mobile-nav">
+          <a href="#vision">Visione</a>
           <a href="#highlights">Highlights</a>
           <a href="#report">Download</a>
-          <a href="#vision">Visione</a>
         </nav>
-        <button class="menu-toggle" aria-expanded="false" aria-label="Apri menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
       </div>
-      <div class="mobile-menu">
-        <div class="mobile-menu-panel" role="dialog" aria-modal="true" aria-label="Menu di navigazione">
-          <nav class="mobile-nav">
-            <a href="#highlights">Highlights</a>
-            <a href="#report">Download</a>
-            <a href="#vision">Visione</a>
-          </nav>
-        </div>
-      </div>
-    </header>
+    </div>
+  </header>
 
   <!-- Hero section -->
-  <section class="hero">
+  <section class="hero" id="hero">
     <div class="container hero-content">
       <div>
-        <h4>Il nostro impegno per l'ambiente, la società e la governance</h4>
         <h1>Sostenibilità concreta e misurabile</h1>
         <br>
         <p>Un report one page dedicato ai progressi e ai risultati del 2024, con dati chiari per valorizzare l'impatto
-          positivo sull'ambiente, sulla filiera e sulle comunità.</p>  
-          <br>
-          <a class="btn-gallo" href="#report">
-            <span class="testo-pulsante">Leggi l'ultimo report</span>
-          </a>
-        </div>
-        
+          positivo sull'ambiente, sulla filiera e sulle comunità.</p>
+        <br>
+        <a class="btn-gallo" href="#report">
+          <span class="testo-pulsante">Leggi l'ultimo report</span>
+        </a>
       </div>
-    </section>
 
-   <!-- Sezione vision -->
+    </div>
+  </section>
+
+  <!-- Sezione vision -->
   <section id="vision" class="section section-vision">
     <div class="container vision-grid">
       <div>
         <div class="section-header">
-          <h4>La nostra missione</h4>
+          <h5>La nostra missione</h5>
           <h2>Una filiera sostenibile e trasparente</h2>
         </div>
         <div class="text-block">
-          <p>Riso Gallo costruisce il suo percorso verso la sostenibilità ponendo attenzione all'intero ciclo produttivo:
-            dall'agricoltura responsabile alla gestione delle risorse, dal rispetto del personale all'etica aziendale. Le
+          <p>Riso Gallo costruisce il suo percorso verso la sostenibilità ponendo attenzione all'intero ciclo
+            produttivo:
+            dall'agricoltura responsabile alla gestione delle risorse, dal rispetto del personale all'etica aziendale.
+            Le
             azioni presentate nel report dimostrano un impegno concreto e una volontà di innovare insieme ai partner del
             territorio.</p>
         </div>
       </div>
       <div class="vision-media">
-        <img src="img/mani_uomo.webp" alt="Mani di uomo che lavorano" />
+        <img src="img/maniUomo.webp" alt="Mani di uomo che lavorano" />
       </div>
     </div>
   </section>
 
   <!-- Sezione highlights -->
-  <section id="highlights" class="section section-highlights">
+  <section id="highlights" class="section section-highlights card-theme-environmental">
+
     <div class="container">
       <div class="section-header">
-        <h4>Dati salienti</h4>
-        <h2>Il nostro impegno</h2>
+        <h5>Rispetto per l'ambiente</h5>
+        <h3>Progresso pulito</h3>
+        <p>Un percorso che unisce energia verde, riduzione dei rifiuti e pratiche forestali
+          responsabili.</p>
       </div>
 
-      <div class="bento-list">
-        <article class="bento-box card-theme-environmental">
-          <div class="bento-content">
-            <div class="section-label">
-              <h4>Ambientale</h4>
-              <h3>Progresso pulito</h3>
-              <p class="box-note">Un percorso che unisce energia verde, riduzione dei rifiuti e pratiche forestali
-                responsabili.</p>
-            </div>
-            <div class="bento-grid">
-              <div class="bento-item">
-                <h4 class="item-title">Energia</h4>
-                <h2 class="item-value">100%</h2>
-                <p class="item-text">Energia elettrica proveniente interamente da fonti rinnovabili.</p>
-              </div>
-              <div class="bento-item">
-                <h4 class="item-title">Risorsa Idrica</h4>
-                <h2 class="item-value">-41,5%</h2>
-                <p class="item-text">Riduzione dei prelievi idrici per quintale di riso lavorato rispetto al 2023.</p>
-              </div>
-              <div class="bento-item">
-                <h4 class="item-title">Packaging</h4>
-                <h2 class="item-value">-7,9%</h2>
-                <p class="item-text">Riduzione dell'uso di imballaggi per quintale di riso confezionato.</p>
-              </div>
-              <div class="bento-item">
-                <h4 class="item-title">Emissioni (Scope 1)</h4>
-                <h2 class="item-value">-12,9%</h2>
-                <p class="item-text">Meno emissioni dirette di gas serra per unità di valore della produzione.</p>
-              </div>
-              <div class="bento-item">
-                <h4 class="item-title">Gestione Rifiuti</h4>
-                <h2 class="item-value">81,7%</h2>
-                <p class="item-text">Frazione di rifiuti totali destinata al riciclo e al recupero.</p>
-              </div>
-              <div class="bento-item">
-                <h4 class="item-title">Carta e Foreste</h4>
-                <h2 class="item-value">100%</h2>
-                <p class="item-text">Cartoncino utilizzato certificato FSC per una gestione forestale responsabile.</p>
-              </div>
-            </div>
-          </div>
-          <div class="bento-media-stack">
-            <div class="bento-media"><span>Campo</span></div>
-            <div class="bento-media"><span>Acqua</span></div>
-            <div class="bento-media"><span>Riciclo</span></div>
-          </div>
-        </article>
+      <article class="bento-container">
+        <div class="bento-item">
+          <h5 class="item-title">Energia</h5>
+          <h2 class="item-value">100%</h2>
+          <p class="item-text">Energia elettrica proveniente interamente da fonti rinnovabili.</p>
+        </div>
+        <div class="bento-item">
+          <h5 class="item-title">Risorsa Idrica</h5>
+          <h2 class="item-value">-41,5%</h2>
+          <p class="item-text">Riduzione dei prelievi idrici per quintale di riso lavorato rispetto al 2023.</p>
+        </div>
+        <div class="bento-item">
+          <h5 class="item-title">Packaging</h5>
+          <h2 class="item-value">-7,9%</h2>
+          <p class="item-text">Riduzione dell'uso di imballaggi per quintale di riso confezionato.</p>
+        </div>
+        <div class="bento-item">
+          <h5 class="item-title">Emissioni (Scope 1)</h5>
+          <h2 class="item-value">-12,9%</h2>
+          <p class="item-text">Meno emissioni dirette di gas serra per unità di valore della produzione.</p>
+        </div>
+        <div class="bento-item">
+          <h5 class="item-title">Gestione Rifiuti</h5>
+          <h2 class="item-value">81,7%</h2>
+          <p class="item-text">Frazione di rifiuti totali destinata al riciclo e al recupero.</p>
+        </div>
+        <div class="bento-item">
+          <h5 class="item-title">Carta e Foreste</h5>
+          <h2 class="item-value">100%</h2>
+          <p class="item-text">Cartoncino utilizzato certificato FSC per una gestione forestale responsabile.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+  
+  <section  class="section section-highlights card-theme-environmental">
 
-        <article class="bento-box card-theme-social">
-          <div class="bento-media-stack">
-            <div class="bento-media"><span>Team</span></div>
-            <div class="bento-media"><span>Filiera</span></div>
-            <div class="bento-media"><span>Territorio</span></div>
-          </div>
-          <div class="bento-content">
-            <div class="section-label">
-              <h4>Sociale</h4>
-              <h3>Persone al centro</h3>
-              <p class="box-note">Un racconto di lavoro stabile, alleanze agricole e supporto concreto alla comunità.
-              </p>
-            </div>
-            <div class="bento-grid">
-              <div class="bento-item">
-                <h4 class="item-title">Lavoro</h4>
-                <h2 class="item-value">97,7%</h2>
-                <p class="item-text">Dipendenti assunti con contratto a tempo indeterminato, a conferma della stabilità
-                  lavorativa.</p>
-              </div>
-              <div class="bento-item">
-                <h4 class="item-title">Filiera Agricola</h4>
-                <h2 class="item-value">200</h2>
-                <p class="item-text">Aziende agricole partner verificate secondo lo standard internazionale di
-                  sostenibilità FSA.</p>
-              </div>
-              <div class="bento-item">
-                <h4 class="item-title">Comunità</h4>
-                <h2 class="item-value">Solidarietà</h2>
-                <p class="item-text">Sostegno attivo al Banco Alimentare e sponsorizzazioni di iniziative del
-                  territorio.</p>
-              </div>
-              <div class="bento-item">
-                <h4 class="item-title">Benessere</h4>
-                <h2 class="item-value">Welfare</h2>
-                <p class="item-text">Programmi di salute, assicurazioni integrative e premi di produttività per il
-                  personale.</p>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <article class="bento-box card-theme-governance">
-          <div class="bento-content">
-            <div class="section-label">
-              <h4>Governance</h4>
-              <h3>Regole chiare</h3>
-              <p class="box-note">Un sistema amministrativo fluido, sostenuto da etica, certificazioni e collaborazione
-                circolare.</p>
-            </div>
-            <div class="bento-grid">
-              <div class="bento-item">
-                <h4 class="item-title">Etica</h4>
-                <h2 class="item-value">Modello 231</h2>
-                <p class="item-text">Adozione del Modello di Organizzazione e del Codice Etico per la prevenzione dei
-                  reati.</p>
-              </div>
-              <div class="bento-item">
-                <h4 class="item-title">Buone Pratiche</h4>
-                <h2 class="item-value">Carta del Riso</h2>
-                <p class="item-text">Un patto basato su 8 regole di coltivazione sostenibile sottoscritto dai
-                  risicoltori.</p>
-              </div>
-              <div class="bento-item">
-                <h4 class="item-title">Circolarità</h4>
-                <h2 class="item-value">Partnership</h2>
-                <p class="item-text">Collaborazioni con Rice House e Mogu per trasformare i sottoprodotti in materiali
-                  per bioedilizia e arredo.</p>
-              </div>
-              <div class="bento-item">
-                <h4 class="item-title">Qualità</h4>
-                <h2 class="item-value">Certificata</h2>
-                <p class="item-text">Sistema di gestione basato su standard internazionali volontari come BRCGS e IFS.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="bento-media-stack">
-            <div class="bento-media"><span>Etica</span></div>
-            <div class="bento-media"><span>Carta</span></div>
-            <div class="bento-media"><span>Innovazione</span></div>
-          </div>
-        </article>
+    <div class="container card-theme-social">
+      <div class="section-header">
+        <h5>Sociale</h5>
+        <h3>Persone al centro</h3>
+        <p>Un racconto di lavoro stabile, alleanze agricole e supporto concreto alla comunità.</p>
       </div>
+      <article class="bento-container">
+        <div class="bento-item  row-span-2">
+          <h5 class="item-title">Lavoro</h5>
+          <h2 class="item-value">97,7%</h2>
+          <p class="item-text">Dipendenti assunti con contratto a tempo indeterminato, a conferma della stabilità
+            lavorativa.</p>
+        </div>
+        <div class="bento-item  row-span-2">
+          <h5 class="item-title">Filiera Agricola</h5>
+          <h2 class="item-value">200</h2>
+          <p class="item-text">Aziende agricole partner verificate secondo lo standard internazionale di
+            sostenibilità FSA.</p>
+            <img src="img/campo.jpg" alt="Icona filiera agricola" class="item-icon">
+        </div>
+        <div class="bento-item  ">
+          <h5 class="item-title">Comunità</h5>
+          <h2 class="item-value">Solidarietà</h2>
+          <p class="item-text">Sostegno attivo al Banco Alimentare e sponsorizzazioni di iniziative del
+            territorio.</p>
+        </div>
+        <div class="bento-item ">
+          <h5 class="item-title">Benessere</h5>
+          <h2 class="item-value">Welfare</h2>
+          <p class="item-text">Programmi di salute, assicurazioni integrative e premi di produttività per il
+            personale.</p>
+        </div>
+      </article>
+    </div>
+    </section>
+
+  <section class="section section-highlights card-theme-environmental">
+    <div class="container card-theme-governance">
+      <div class="section-header">
+        <h5>Governance</h5>
+        <h3>Regole chiare</h3>
+        <p>Un sistema amministrativo fluido, sostenuto da etica, certificazioni e collaborazione
+          circolare.</p>
+      </div>
+      <article class="bento-container">
+        <div class="bento-item  row-span-2">
+          <h5 class="item-title">Buone Pratiche</h5>
+          <h2 class="item-value">Carta del Riso</h2>
+          <p class="item-text">Un patto basato su otto regole di coltivazione sostenibile, sottoscritto dai risicoltori.
+          </p>
+        </div>
+
+        <div class="bento-item  row-span-2">
+          <h5 class="item-title">Etica</h5>
+          <h2 class="item-value">Modello 231</h2>
+          <p class="item-text">Adozione del Modello di Organizzazione e del Codice Etico per la prevenzione dei reati.</p>
+        </div>
+
+        <div class="bento-item ">
+          <h5 class="item-title">Circolarità</h5>
+          <h2 class="item-value">Partnership</h2>
+          <p class="item-text">Collaborazioni con Rice House e Mogu per trasformare i sottoprodotti in materiali per
+            bioedilizia e arredo.</p>
+        </div>
+
+        <div class="bento-item ">
+          <h5 class="item-title">Qualità</h5>
+          <h2 class="item-value">Certificata</h2>
+          <p class="item-text">Sistema di gestione basato su standard internazionali volontari come BRCGS e IFS.</p>
+        </div>
+      </article>
     </div>
   </section>
 
   <!-- Sezione download report -->
   <section id="report" class="section section-report">
     <div class="container report-panel">
-      <div>        
+      <div>
         <h2>Report di sostenibilità 2024</h2>
         <p>Accedi al documento ufficiale per approfondire i risultati, i programmi e le strategie di Riso Gallo per un
           futuro più sostenibile.</p>
-      </div>
-      <div class="report-actions">
-        <a class="btn-gallo" href="#" download="Report_Sostenibilita_Riso_Gallo_2024.pdf">
+        <br>
+        <a class="btn-gallo" href="/docs/Riso-Gallo_report_ITA.pdf" download="Report_Sostenibilita_Riso_Gallo_2024.pdf">
           <span class="testo-pulsante">Download PDF</span>
         </a>
-        <p class="note">Disponibile in versione completa e scaricabile.</p>
+      </div>
+      <div class="report-actions">
+        <a href="/docs/Riso-Gallo_report_ITA.pdf" target="_blank">
+          <img src="img/reportCover.webp" alt="Copertina del report di sostenibilità" class="report-cover">
+        </a>
       </div>
     </div>
   </section>
-
- 
 
   <!-- Footer -->
   <footer class="site-footer">
