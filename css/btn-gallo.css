@@ -1,0 +1,58 @@
+
+.btn-gallo {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 50px;
+  cursor: pointer;
+  overflow: hidden;
+  user-select: none;
+  background: var(--primary);
+  color: var(--primary-soft); 
+  border-radius: var(--radius);
+  transition: all 0.3s ease;
+  max-width: 100%;
+  min-width: 0;
+  white-space: normal;
+}
+
+.btn-gallo .testo-pulsante {
+  text-align: center;
+}
+
+.btn-gallo .testo-pulsante {
+  display: inline-block;
+  line-height: 1;
+  color: transparent;
+  transform: translateY(0);
+  transition: transform var(--animation), text-shadow var(--animation);
+  text-shadow: 0 0 0 #ffffff, 0 3rem 0 transparent;
+}
+
+.btn-gallo::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  top: 100%;
+  width: 100%;
+  height: 0;
+  padding-top: 100%;
+  transform: translate(-50%, 0);
+  border-radius: 50% 50% 0 0;
+  background-color: var(--primary-dark);
+  transition: all var(--animation) 0.05s,
+    border-radius var(--animation) 0.22s;
+}
+.btn-gallo:hover::before {
+  top: 0;
+  width: 101%;
+  height: 101%;
+  padding-top: 0;
+  border-radius: inherit;
+}
+.btn-gallo:hover .testo-pulsante {
+  text-shadow: 0 -3rem 0 transparent, 0 0 0 #ffffff;
+}

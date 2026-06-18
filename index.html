@@ -9,8 +9,10 @@
     @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Marcellus&display=swap');
   </style>
   <link href="https://googleapis.com" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="bento-structure.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/bento-structure.css">
+  <link rel="stylesheet" href="css/btn-gallo.css">
+  <link rel="stylesheet" href="css/scroller.css">
   <script defer src="script.js"></script>
 </head>
 
@@ -129,8 +131,8 @@
       </article>
     </div>
   </section>
-  
-  <section  class="section section-highlights card-theme-environmental">
+
+  <section class="section section-highlights card-theme-environmental">
 
     <div class="container card-theme-social">
       <div class="section-header">
@@ -139,24 +141,26 @@
         <p>Un racconto di lavoro stabile, alleanze agricole e supporto concreto alla comunità.</p>
       </div>
       <article class="bento-container">
-        <div class="bento-item  row-span-2">
+        <div class="bento-item">
           <h5 class="item-title">Lavoro</h5>
           <h2 class="item-value">97,7%</h2>
           <p class="item-text">Dipendenti assunti con contratto a tempo indeterminato, a conferma della stabilità
             lavorativa.</p>
         </div>
-        <div class="bento-item  row-span-2">
+        <div class="bento-item">
           <h5 class="item-title">Filiera Agricola</h5>
           <h2 class="item-value">200</h2>
           <p class="item-text">Aziende agricole partner verificate secondo lo standard internazionale di
             sostenibilità FSA.</p>
-            <img src="img/campo.jpg" alt="Icona filiera agricola" class="item-icon">
         </div>
         <div class="bento-item  ">
           <h5 class="item-title">Comunità</h5>
           <h2 class="item-value">Solidarietà</h2>
           <p class="item-text">Sostegno attivo al Banco Alimentare e sponsorizzazioni di iniziative del
             territorio.</p>
+        </div>
+        <div class="bento-item img col-span-2">
+          <img src="img/campo.jpg" alt="Icona filiera agricola" class="item-icon">
         </div>
         <div class="bento-item ">
           <h5 class="item-title">Benessere</h5>
@@ -166,7 +170,7 @@
         </div>
       </article>
     </div>
-    </section>
+  </section>
 
   <section class="section section-highlights card-theme-environmental">
     <div class="container card-theme-governance">
@@ -177,17 +181,18 @@
           circolare.</p>
       </div>
       <article class="bento-container">
-        <div class="bento-item  row-span-2">
+        <div class="bento-item">
           <h5 class="item-title">Buone Pratiche</h5>
           <h2 class="item-value">Carta del Riso</h2>
           <p class="item-text">Un patto basato su otto regole di coltivazione sostenibile, sottoscritto dai risicoltori.
           </p>
         </div>
 
-        <div class="bento-item  row-span-2">
+        <div class="bento-item">
           <h5 class="item-title">Etica</h5>
           <h2 class="item-value">Modello 231</h2>
-          <p class="item-text">Adozione del Modello di Organizzazione e del Codice Etico per la prevenzione dei reati.</p>
+          <p class="item-text">Adozione del Modello di Organizzazione e del Codice Etico per la prevenzione dei reati.
+          </p>
         </div>
 
         <div class="bento-item ">
@@ -197,10 +202,166 @@
             bioedilizia e arredo.</p>
         </div>
 
-        <div class="bento-item ">
+        <div class="bento-item col-span-3">
           <h5 class="item-title">Qualità</h5>
           <h2 class="item-value">Certificata</h2>
           <p class="item-text">Sistema di gestione basato su standard internazionali volontari come BRCGS e IFS.</p>
+          <div class="logo-slider">
+            <!-- ================= PRIMO GRUPPO DI LOGHI ================= -->
+            <div class="logo-slide-track">
+              <!-- Partner 1 -->
+              <div class="logo-card">
+                <img src="img/brcgsLogo.webp" alt="BRGSC" class="logo-img">
+                <div class="logo-details">
+                  <h4>BRGSC</h4>
+                  <p>Linee guida per la sicurezza alimentare utilizzate in oltre 60 Paesi.</p>
+                </div>
+              </div>
+
+              <!-- Partner 2 -->
+              <div class="logo-card">
+                <img src="img/ifsLogo.webp" alt="IFS" class="logo-img">
+                <div class="logo-details">
+                  <h4>IFS</h4>
+                  <p>International Food Standard. Joint venture tra federazione della grande distribuzione
+                    francese FCD e tedesca HDE.</p>
+                </div>
+              </div>
+
+              <!-- Partner 3 -->
+              <div class="logo-card">
+                <img src="img/aicLogo.webp" alt="AIC" class="logo-img">
+                <div class="logo-details">
+                  <h4>AIC</h4>
+                  <p>Licenza d’uso del marchio per prodotti senza glutine.</p>
+                </div>
+              </div>
+
+              <!-- Partner 4 -->
+              <div class="logo-card">
+                <img src="img/kosherLogo.webp" alt="Kosher" class="logo-img">
+                <div class="logo-details">
+                  <h4>Kosher</h4>
+                  <p>Conformità di impianti e prodotti alimentari alle regole alimentari ebraiche.</p>
+                </div>
+              </div>
+
+              <!-- Partner 5 -->
+              <div class="logo-card">
+                <img src="img/halalLogo.webp" alt="Halal" class="logo-img">
+                <div class="logo-details">
+                  <h4>Halal</h4>
+                  <p>Conformità del prodotto alimentare ai precetti della religione islamica.</p>
+                </div>
+              </div>
+
+              <!-- Partner 6 -->
+              <div class="logo-card">
+                <img src="img/fsaLogo.webp" alt="FSA" class="logo-img">
+                <div class="logo-details">
+                  <h4>FSA</h4>
+                  <p>Farm Sustainability Assessment by SAI Platform. Un set di requisiti
+                    verificabili per l’agricoltura sostenibile.</p>
+                </div>
+              </div>
+
+              <!-- Partner 7 -->
+              <div class="logo-card">
+                <img src="img/srpLogo.webp" alt="SRP" class="logo-img">
+                <div class="logo-details">
+                  <h4>SRP</h4>
+                  <p>Protocollo per la coltivazione sostenibile del riso.</p>
+                </div>
+              </div>
+
+              <!-- Partner 8 -->
+              <div class="logo-card">
+                <img src="img/smeta4pillarsLogo.webp" alt="SMETA 4PILLARS" class="logo-img">
+                <div class="logo-details">
+                  <h4>SMETA 4PILLARS</h4>
+                  <p>Responsabilità sociale per essere inseriti nel “supplier ethical data exchange” (Sedex)</p>
+                </div>
+              </div>
+
+            </div>
+             <div class="logo-slide-track">
+              <!-- Partner 1 -->
+              <div class="logo-card">
+                <img src="img/brcgsLogo.webp" alt="BRGSC" class="logo-img">
+                <div class="logo-details">
+                  <h4>BRGSC</h4>
+                  <p>Linee guida per la sicurezza alimentare utilizzate in oltre 60 Paesi.</p>
+                </div>
+              </div>
+
+              <!-- Partner 2 -->
+              <div class="logo-card">
+                <img src="img/ifsLogo.webp" alt="IFS" class="logo-img">
+                <div class="logo-details">
+                  <h4>IFS</h4>
+                  <p>International Food Standard. Joint venture tra federazione della grande distribuzione
+                    francese FCD e tedesca HDE.</p>
+                </div>
+              </div>
+
+              <!-- Partner 3 -->
+              <div class="logo-card">
+                <img src="img/aicLogo.webp" alt="AIC" class="logo-img">
+                <div class="logo-details">
+                  <h4>AIC</h4>
+                  <p>Licenza d’uso del marchio per prodotti senza glutine.</p>
+                </div>
+              </div>
+
+              <!-- Partner 4 -->
+              <div class="logo-card">
+                <img src="img/kosherLogo.webp" alt="Kosher" class="logo-img">
+                <div class="logo-details">
+                  <h4>Kosher</h4>
+                  <p>Conformità di impianti e prodotti alimentari alle regole alimentari ebraiche.</p>
+                </div>
+              </div>
+
+              <!-- Partner 5 -->
+              <div class="logo-card">
+                <img src="img/halalLogo.webp" alt="Halal" class="logo-img">
+                <div class="logo-details">
+                  <h4>Halal</h4>
+                  <p>Conformità del prodotto alimentare ai precetti della religione islamica.</p>
+                </div>
+              </div>
+
+              <!-- Partner 6 -->
+              <div class="logo-card">
+                <img src="img/fsaLogo.webp" alt="FSA" class="logo-img">
+                <div class="logo-details">
+                  <h4>FSA</h4>
+                  <p>Farm Sustainability Assessment by SAI Platform. Un set di requisiti
+                    verificabili per l’agricoltura sostenibile.</p>
+                </div>
+              </div>
+
+              <!-- Partner 7 -->
+              <div class="logo-card">
+                <img src="img/srpLogo.webp" alt="SRP" class="logo-img">
+                <div class="logo-details">
+                  <h4>SRP</h4>
+                  <p>Protocollo per la coltivazione sostenibile del riso.</p>
+                </div>
+              </div>
+
+              <!-- Partner 8 -->
+              <div class="logo-card">
+                <img src="img/smeta4pillarsLogo.webp" alt="SMETA 4PILLARS" class="logo-img">
+                <div class="logo-details">
+                  <h4>SMETA 4PILLARS</h4>
+                  <p>Responsabilità sociale per essere inseriti nel “supplier ethical data exchange” (Sedex)</p>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
         </div>
       </article>
     </div>

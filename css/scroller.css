@@ -1,0 +1,132 @@
+/* --- STRUTTURA SLIDER BASE --- */
+.logo-slider {
+  overflow: hidden; /* Blocca tutto all'interno dello slider */
+  padding: 40px 0; 
+  position: relative;
+  display: flex;     /* FONDAMENTALE: affianca le due tracce .logo-slide-track */
+  width: 100% + 48px; /* Compensa il padding orizzontale per evitare scatti */
+  margin: 0 -24px ;
+}
+
+.logo-slide-track {
+  display: flex;
+  align-items: center; /* Centra verticalmente le card */
+  flex-shrink: 0;
+  white-space: nowrap; 
+  
+  /* Usa -100% per far scorrere l'intero blocco di 6 loghi in modo continuo */
+  animation: scorrimento 10s linear infinite; 
+  
+  /* IL SEGRETO: Blocchiamo l'altezza massima della riga dello slider. */
+  height: 100px; 
+  
+  /* Gestione dello spazio uniforme ed eliminazione dello scatto macroscopico */
+  gap: 40px;
+  padding-right: 40px; /* Garantisce che lo spazio tra la fine della traccia 1 e l'inizio della 2 sia perfetto */
+}
+
+/* Ferma lo scorrimento all'hover su tutto lo slider */
+.logo-slider:hover .logo-slide-track {
+  animation-play-state: paused;
+}
+
+/* --- LE TUE DIMENSIONI ORIGINALI (CHIUSA) --- */
+.logo-card {
+  background: white;  
+  padding: 15px;
+  border-radius: 8px;
+    
+  display: flex;
+  flex-direction: row; 
+  align-items: center; 
+  flex-shrink: 0; 
+  
+  /* Misure di partenza fisse */
+  width: 180px; 
+  height: 80px;
+  min-width: 180px;
+  box-sizing: border-box; 
+  
+  /* Transizione fluida sulle dimensioni fisiche (effetto fisarmonica) */
+  transition: min-width var(--animation), max-width var(--animation), height var(--animation);
+  cursor: pointer;
+}
+
+/* --- IL LOGO --- */
+.logo-img {
+  height: 50px;
+  max-width: 120px; 
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.6;
+  border-radius: 0;
+  /* Centra il logo quando è chiuso */
+  flex: 1 0 auto;
+  margin: 0 auto; 
+  
+  transition: all var(--animation);
+}
+
+/* --- DETTAGLI NASCONDI/MOSTRA --- */
+.logo-details {
+  max-width: 0; 
+  overflow: hidden; 
+  opacity: 0;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: max-width var(--animation), opacity var(--animation), margin var(--animation);
+}
+
+.logo-details h4 {
+  margin: 0 0 5px 0;
+  font-size: 16px; 
+  color: #333;
+  text-wrap: pretty;
+}
+
+.logo-details p {
+  margin: 0;
+  font-size: 12px; 
+  color: #666;
+  text-wrap: auto;
+  min-width: 160px; 
+}
+
+/* --- LE TUE DIMENSIONI ORIGINALI (HOVER) --- */
+.logo-card:hover {
+  /* Si allarga spingendo le altre (non le copre) e cresce in altezza */
+  min-width: 280px; 
+  max-width: 280px;
+  height: 140px; 
+  border-radius: 16px;
+}
+
+.logo-card:hover .logo-img {
+  filter: grayscale(0%);
+  opacity: 1;
+  height: 80px; 
+  max-width:80px;
+  /* Sposta il logo a sinistra per fare spazio al testo */
+  flex: 0 0 auto;
+  margin: 0; 
+  border-radius: 0;
+}
+
+.logo-card:hover .logo-details {
+  max-width: 180px; 
+  opacity: 1;
+  margin-left: 20px; 
+}
+
+/* --- ANIMAZIONE SCORRIMENTO PERFETTA --- */
+@keyframes scorrimento {
+  0% { 
+    transform: translateX(0); 
+  }
+  100% { 
+    /* Sposta l'intera traccia esattamente della sua larghezza totale (-100%) */
+    transform: translateX(-100%); 
+  } 
+}
