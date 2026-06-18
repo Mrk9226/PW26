@@ -1,12 +1,12 @@
 /* Stili globali e reset base */
 :root {
-  --bg: #f7f8fb;
+  --bg: #f7f9f8;
   --surface: #ffffff;
   --text: #203930;
   --muted: #6b7280;
   --primary: #418848;
   --primary-dark: #27463b; 
-  --primary-soft: #daf6e2;
+  --primary-soft: #eaefeb;
   --accent: #fef1cc;
   --border: 1px dashed #a4b7b2;    
   --radius: 30px;
@@ -35,6 +35,15 @@ body {
   min-width: 0;
   overflow-x: hidden;
 }
+
+main {
+  
+   background-image: url("../img/SimpleShiny.svg"); 
+   background-position: center;
+   background-size:cover;
+
+}
+
 
 .container {
   max-width: 100%;
@@ -276,9 +285,10 @@ pointer-events: auto;
 /* Hero section */
 .hero {
   padding-top: 200px;
+  padding-bottom: 2rem;
   min-height: 100vh;
   display: flex;
-  align-items: flex-start;
+  align-items: flex-end;
   background-image: url("../img/bannerSostenibilita.webp");
   background-size: cover;
   background-position: center;
@@ -292,7 +302,7 @@ pointer-events: auto;
   position: relative;
   display: grid;
   gap: 2rem;
-  align-items: flex-start;    
+  align-items: flex-end;    
 }
 
 .hero h2 {  
@@ -412,7 +422,7 @@ img {
   gap: 1.5rem;
   padding: 2rem;
   border-radius: var(--radius);
-  background: linear-gradient(135deg, #ecfdf5 0%, #ffffff 100%);
+  background: linear-gradient(135deg, var(--accent) 0%, #ffffff 100%);
   border: var(--border);
 }
 
@@ -448,7 +458,7 @@ img {
 /* Footer */
 .site-footer {
   padding: 2rem 0;
-  background: #ffffff;
+  background: var(--text);
   border-top: 1px solid var(--border);
 }
 

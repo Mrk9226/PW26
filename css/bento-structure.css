@@ -43,6 +43,14 @@
   padding: 0;     
   max-height: 20rem;
 }
+.bento-item.img.row-span-2{
+  padding: 0;     
+  max-height: 40rem;
+}
+.bento-item.img.row-span-3{
+  padding: 0;     
+  max-height: 60rem;
+}
 .bento-item.img img{
   object-fit:cover;
   height:100%;
