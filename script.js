@@ -44,3 +44,15 @@ window.addEventListener('keydown', (event) => {
     closeMobileMenu();
   }
 });
+
+// Inizializza Flickity per il carousel delle certificazioni
+document.addEventListener('DOMContentLoaded', function() {
+  const carousel = document.querySelector('.logo-carousel');
+  if (carousel && typeof Flickity !== 'undefined') {
+    new Flickity(carousel, {
+      pageDots: false,
+      autoPlay: 2000,
+      wrapAround: true,     
+    });
+  }
+});

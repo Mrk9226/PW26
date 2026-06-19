@@ -13,7 +13,11 @@
   <link rel="stylesheet" href="css/bento-structure.css">
   <link rel="stylesheet" href="css/btn-gallo.css">
   <link rel="stylesheet" href="css/scroller.css">
+  <link rel="stylesheet" href="css/flickity.css">
+  <script src="flickity.pkgd.min.js"></script>
   <script defer src="script.js"></script>
+  <link rel="icon" type="image/png" href="img/galloLogo.png">
+
 </head>
 
 <body>
@@ -22,7 +26,13 @@
   <header class="site-header">
     <div class="container header-inner">
       <div class="brand"> <a href="#hero">
-          <img src="img/galloLogo.webp" alt="Logo Riso Gallo" class="brand-logo"></a>
+          <picture>
+            <!-- 1. Prima scelta: AVIF (per i browser moderni) -->
+            <source srcset="img/galloLogo.avif" type="image/avif">
+            <!-- 2. Fallback universale: PNG (per i browser che non supportano AVIF) -->
+            <img src="img/galloLogo.png" alt="Logo Riso Gallo" class="brand-logo">
+          </picture>
+        </a>
       </div>
       <nav class="main-nav">
         <a href="#vision">Visione</a>
@@ -50,16 +60,15 @@
   <section class="hero" id="hero">
     <div class="container hero-content">
       <div>
-        <h1>Sostenibilità concreta e misurabile</h1>
+        <h1>Il nostro impegno ha radici profonde</h1>
         <br>
-        <p>Un report one page dedicato ai progressi e ai risultati del 2024, con dati chiari per valorizzare l'impatto
-          positivo sull'ambiente, sulla filiera e sulle comunità.</p>
+        <p>I traguardi, i dati trasparenti e le azioni concrete che hanno guidato il nostro 2024. Scopri come
+          valorizziamo il territorio, riduciamo l'impatto ambientale e sosteniamo le persone.</p>
         <br>
         <a class="btn-gallo" href="#report">
-          <span class="testo-pulsante">Leggi l'ultimo report</span>
+          <span class="testo-pulsante">Scopri il Report 2024</span>
         </a>
       </div>
-
     </div>
   </section>
 
@@ -68,16 +77,14 @@
     <div class="container vision-grid">
       <div>
         <div class="section-header">
-          <h5>La nostra missione</h5>
-          <h2>Una filiera sostenibile e trasparente</h2>
+          <h5>Cosa ci guida</h5>
+          <h2>Coltiviamo la terra con rispetto, giorno dopo giorno</h2>
         </div>
         <div class="text-block">
-          <p>Riso Gallo costruisce il suo percorso verso la sostenibilità ponendo attenzione all'intero ciclo
-            produttivo:
-            dall'agricoltura responsabile alla gestione delle risorse, dal rispetto del personale all'etica aziendale.
-            Le
-            azioni presentate nel report dimostrano un impegno concreto e una volontà di innovare insieme ai partner del
-            territorio.</p>
+          <p>Il nostro cammino verso la sostenibilità parte dalle persone e dai campi. Ci prendiamo cura di ogni chicco
+            seguendo l'intera filiera: proteggiamo l'ambiente, usiamo le risorse con intelligenza e lavoriamo fianco a
+            fianco con la nostra comunità. Questo report racconta gesti reali, fatti di ascolto, rispetto e innovazione
+            condivisa con il territorio.</p>
         </div>
       </div>
       <div class="vision-media">
@@ -85,316 +92,241 @@
       </div>
     </div>
   </section>
- <main>
-  <!-- Sezione highlights -->
-  <section id="highlights" class="section section-highlights card-theme-environmental">
+  <main>
 
-    <div class="container">
-      <div class="section-header">
-        <h5>Rispetto per l'ambiente</h5>
-        <h3>Progresso pulito</h3>
-        <p>Un percorso che unisce energia verde, riduzione dei rifiuti e pratiche forestali
-          responsabili.</p>
+    <!-- Sezione highlights -->
+    <section id="highlights" class="section section-highlights card-theme-environmental">
+
+      <div class="container">
+        <div class="section-header">
+          <h5>La nostra cura per la Terra</h5>
+          <h3>Ogni scelta conta</h3>
+          <p>Lavoriamo ogni giorno per usare solo energia pulita, ridurre gli sprechi e proteggere le foreste.</p>
+        </div>
+
+        <article class="bento-container">
+          <div class="bento-item">
+            <h5 class="item-title">Sole, acqua e vento</h5>
+            <h2 class="item-value">100%</h2>
+            <p class="item-text">Tutta l'elettricità che usiamo arriva da fonti pulite e rinnovabili.</p>
+          </div>
+          <div class="bento-item">
+            <h5 class="item-title">Risparmio idrico</h5>
+            <h2 class="item-value">-41,5%</h2>
+            <p class="item-text">Abbiamo ridotto l'acqua prelevata per ogni quintale di riso rispetto al 2023.</p>
+          </div>
+          <div class="bento-item">
+            <h5 class="item-title">Aria più pulita</h5>
+            <h2 class="item-value">-12,9%</h2>
+            <p class="item-text">Meno emissioni dirette di gas serra nell'atmosfera per ogni confezione creata.</p>
+          </div>
+          <div class="bento-item">
+            <h5 class="item-title">Meno imballaggi</h5>
+            <img src="img/grafico4.webp" alt="Grafico riduzione imballaggi">
+            <p class="item-text">Usiamo solo il materiale strettamente necessario per confezionare il riso.</p>
+          </div>
+          <div class="bento-item img col-span-2">
+            <img src="img/campo.jpg" alt="Icona filiera agricola">
+          </div>
+          <div class="bento-item">
+            <h5 class="item-title">Amici delle foreste</h5>
+            <h2 class="item-value">100%</h2>
+            <p class="item-text">Tutto il nostro cartoncino è certificato FSC per proteggere i polmoni del mondo.</p>
+          </div>
+          <div class="bento-item img">
+            <img src="img/pack.webp" alt="Packaging riciclato">
+          </div>
+          <div class="bento-item">
+            <h5 class="item-title">Seconda vita ai rifiuti</h5>
+            <h2 class="item-value">81,7%</h2>
+            <p class="item-text">Quasi la totalità dei nostri scarti viene recuperata e trasformata in nuova risorsa.
+            </p>
+          </div>
+        </article>
       </div>
+    </section>
 
-      <article class="bento-container">
-        <div class="bento-item">
-          <h5 class="item-title">Energia</h5>
-          <h2 class="item-value">100%</h2>
-          <p class="item-text">Energia elettrica proveniente interamente da fonti rinnovabili.</p>
-        </div>
-        <div class="bento-item">
-          <h5 class="item-title">Risorsa Idrica</h5>
-          <h2 class="item-value">-41,5%</h2>
-          <p class="item-text">Riduzione dei prelievi idrici per quintale di riso lavorato rispetto al 2023.</p>
-        </div>
-        <div class="bento-item">
-          <h5 class="item-title">Packaging</h5>
-          <h2 class="item-value">-7,9%</h2>
-          <p class="item-text">Riduzione dell'uso di imballaggi per quintale di riso confezionato.</p>
-        </div>
-         <div class="bento-item img col-span-2">
-          <img src="img/campo.jpg" alt="Icona filiera agricola" class="item-icon">
-        </div>
-        <div class="bento-item">
-          <h5 class="item-title">Emissioni (Scope 1)</h5>
-          <h2 class="item-value">-12,9%</h2>
-          <p class="item-text">Meno emissioni dirette di gas serra per unità di valore della produzione.</p>
-        </div>
-        <div class="bento-item">
-          <h5 class="item-title">Gestione Rifiuti</h5>
-          <h2 class="item-value">81,7%</h2>
-          <p class="item-text">Frazione di rifiuti totali destinata al riciclo e al recupero.</p>
-        </div>
-        <div class="bento-item">
-          <h5 class="item-title">Carta e Foreste</h5>
-          <h2 class="item-value">100%</h2>
-          <p class="item-text">Cartoncino utilizzato certificato FSC per una gestione forestale responsabile.</p>
-        </div>
-        <div class="bento-item img">
-         <img src="img/pack.webp" alt="Packaging riciclato">
-         </div>
-      </article>
-    </div>
-  </section>
 
-  <section class="section section-highlights card-theme-environmental">
+    <section class="section class=" section section-highlights card-theme-environmental"">
 
-    <div class="container card-theme-social">
-      <div class="section-header">
-        <h5>Sociale</h5>
-        <h3>Persone al centro</h3>
-        <p>Un racconto di lavoro stabile, alleanze agricole e supporto concreto alla comunità.</p>
-      </div>
-      <article class="bento-container">
-        <div class="bento-item">
-          <h5 class="item-title">Filiera Agricola</h5>
-          <h2 class="item-value">200</h2>
-          <p class="item-text">Aziende agricole partner verificate secondo lo standard internazionale di
-            sostenibilità FSA.</p>
+      <div class="container card-theme-social">
+        <div class="section-header">
+          <h5>Il nostro impegno sociale</h5>
+          <h3>Le persone prima di tutto</h3>
+          <p>Crediamo nel lavoro stabile, nelle alleanze nate sul campo e nel sostegno a chi ci sta vicino.</p>
+        </div>
+        <article class="bento-container">
+          <div class="bento-item">
+            <h5 class="item-title">Agricoltori alleati</h5>
+            <h2 class="item-value">200</h2>
+            <p class="item-text">Aziende agricole che coltivano con noi seguendo i più rigorosi standard di
+              sostenibilità mondiali.</p>
           </div>
           <div class="bento-item img row-span-2">
             <img src="img/donna.webp" alt="Icona filiera agricola" class="item-icon">
           </div>
           <div class="bento-item">
-            <h5 class="item-title">Lavoro</h5>
+            <h5 class="item-title">Sicurezza del futuro</h5>
             <h2 class="item-value">97,7%</h2>
-            <p class="item-text">Dipendenti assunti con contratto a tempo indeterminato, a conferma della stabilità
-              lavorativa.</p>
+            <p class="item-text">Delle nostre persone lavora con un contratto a tempo indeterminato, per costruire una
+              stabilità reale.</p>
           </div>
           <div class="bento-item  ">
-            <h5 class="item-title">Comunità</h5>
+            <h5 class="item-title">Vicini al territorio</h5>
             <h2 class="item-value">Solidarietà</h2>
-            <p class="item-text">Sostegno attivo al Banco Alimentare e sponsorizzazioni di iniziative del
-              territorio.</p>
-            </div>
-       
-        <div class="bento-item ">
-          <h5 class="item-title">Benessere</h5>
-          <h2 class="item-value">Welfare</h2>
-          <p class="item-text">Programmi di salute, assicurazioni integrative e premi di produttività per il
-            personale.</p>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <section class="section section-highlights card-theme-environmental">
-    <div class="container card-theme-governance">
-      <div class="section-header">
-        <h5>Governance</h5>
-        <h3>Regole chiare</h3>
-        <p>Un sistema amministrativo fluido, sostenuto da etica, certificazioni e collaborazione
-          circolare.</p>
-      </div>
-      <article class="bento-container">
-        <div class="bento-item">
-          <h5 class="item-title">Buone Pratiche</h5>
-          <h2 class="item-value">Carta del Riso</h2>
-          <p class="item-text">Un patto basato su otto regole di coltivazione sostenibile, sottoscritto dai risicoltori.
-          </p>
-        </div>
-
-        <div class="bento-item">
-          <h5 class="item-title">Etica</h5>
-          <h2 class="item-value">Modello 231</h2>
-          <p class="item-text">Adozione del Modello di Organizzazione e del Codice Etico per la prevenzione dei reati.
-          </p>
-        </div>
-
-        <div class="bento-item ">
-          <h5 class="item-title">Circolarità</h5>
-          <h2 class="item-value">Partnership</h2>
-          <p class="item-text">Collaborazioni con Rice House e Mogu per trasformare i sottoprodotti in materiali per
-            bioedilizia e arredo.</p>
-        </div>
-
-        <div class="bento-item col-span-3">
-          <h5 class="item-title">Qualità</h5>
-          <h2 class="item-value">Certificata</h2>
-          <p class="item-text">Sistema di gestione basato su standard internazionali volontari come BRCGS e IFS.</p>
-          <div class="logo-slider">
-            <!-- ================= PRIMO GRUPPO DI LOGHI ================= -->
-            <div class="logo-slide-track">
-              <!-- Partner 1 -->
-              <div class="logo-card">
-                <img src="img/brcgsLogo.webp" alt="BRGSC" class="logo-img">
-                <div class="logo-details">
-                  <h4>BRGSC</h4>
-                  <p>Linee guida per la sicurezza alimentare utilizzate in oltre 60 Paesi.</p>
-                </div>
-              </div>
-
-              <!-- Partner 2 -->
-              <div class="logo-card">
-                <img src="img/ifsLogo.webp" alt="IFS" class="logo-img">
-                <div class="logo-details">
-                  <h4>IFS</h4>
-                  <p>International Food Standard. Joint venture tra federazione della grande distribuzione
-                    francese FCD e tedesca HDE.</p>
-                </div>
-              </div>
-
-              <!-- Partner 3 -->
-              <div class="logo-card">
-                <img src="img/aicLogo.webp" alt="AIC" class="logo-img">
-                <div class="logo-details">
-                  <h4>AIC</h4>
-                  <p>Licenza d’uso del marchio per prodotti senza glutine.</p>
-                </div>
-              </div>
-
-              <!-- Partner 4 -->
-              <div class="logo-card">
-                <img src="img/kosherLogo.webp" alt="Kosher" class="logo-img">
-                <div class="logo-details">
-                  <h4>Kosher</h4>
-                  <p>Conformità di impianti e prodotti alimentari alle regole alimentari ebraiche.</p>
-                </div>
-              </div>
-
-              <!-- Partner 5 -->
-              <div class="logo-card">
-                <img src="img/halalLogo.webp" alt="Halal" class="logo-img">
-                <div class="logo-details">
-                  <h4>Halal</h4>
-                  <p>Conformità del prodotto alimentare ai precetti della religione islamica.</p>
-                </div>
-              </div>
-
-              <!-- Partner 6 -->
-              <div class="logo-card">
-                <img src="img/fsaLogo.webp" alt="FSA" class="logo-img">
-                <div class="logo-details">
-                  <h4>FSA</h4>
-                  <p>Farm Sustainability Assessment by SAI Platform. Un set di requisiti
-                    verificabili per l’agricoltura sostenibile.</p>
-                </div>
-              </div>
-
-              <!-- Partner 7 -->
-              <div class="logo-card">
-                <img src="img/srpLogo.webp" alt="SRP" class="logo-img">
-                <div class="logo-details">
-                  <h4>SRP</h4>
-                  <p>Protocollo per la coltivazione sostenibile del riso.</p>
-                </div>
-              </div>
-
-              <!-- Partner 8 -->
-              <div class="logo-card">
-                <img src="img/smeta4pillarsLogo.webp" alt="SMETA 4PILLARS" class="logo-img">
-                <div class="logo-details">
-                  <h4>SMETA 4PILLARS</h4>
-                  <p>Responsabilità sociale per essere inseriti nel “supplier ethical data exchange” (Sedex)</p>
-                </div>
-              </div>
-
-            </div>
-             <div class="logo-slide-track">
-              <!-- Partner 1 -->
-              <div class="logo-card">
-                <img src="img/brcgsLogo.webp" alt="BRGSC" class="logo-img">
-                <div class="logo-details">
-                  <h4>BRGSC</h4>
-                  <p>Linee guida per la sicurezza alimentare utilizzate in oltre 60 Paesi.</p>
-                </div>
-              </div>
-
-              <!-- Partner 2 -->
-              <div class="logo-card">
-                <img src="img/ifsLogo.webp" alt="IFS" class="logo-img">
-                <div class="logo-details">
-                  <h4>IFS</h4>
-                  <p>International Food Standard. Joint venture tra federazione della grande distribuzione
-                    francese FCD e tedesca HDE.</p>
-                </div>
-              </div>
-
-              <!-- Partner 3 -->
-              <div class="logo-card">
-                <img src="img/aicLogo.webp" alt="AIC" class="logo-img">
-                <div class="logo-details">
-                  <h4>AIC</h4>
-                  <p>Licenza d’uso del marchio per prodotti senza glutine.</p>
-                </div>
-              </div>
-
-              <!-- Partner 4 -->
-              <div class="logo-card">
-                <img src="img/kosherLogo.webp" alt="Kosher" class="logo-img">
-                <div class="logo-details">
-                  <h4>Kosher</h4>
-                  <p>Conformità di impianti e prodotti alimentari alle regole alimentari ebraiche.</p>
-                </div>
-              </div>
-
-              <!-- Partner 5 -->
-              <div class="logo-card">
-                <img src="img/halalLogo.webp" alt="Halal" class="logo-img">
-                <div class="logo-details">
-                  <h4>Halal</h4>
-                  <p>Conformità del prodotto alimentare ai precetti della religione islamica.</p>
-                </div>
-              </div>
-
-              <!-- Partner 6 -->
-              <div class="logo-card">
-                <img src="img/fsaLogo.webp" alt="FSA" class="logo-img">
-                <div class="logo-details">
-                  <h4>FSA</h4>
-                  <p>Farm Sustainability Assessment by SAI Platform. Un set di requisiti
-                    verificabili per l’agricoltura sostenibile.</p>
-                </div>
-              </div>
-
-              <!-- Partner 7 -->
-              <div class="logo-card">
-                <img src="img/srpLogo.webp" alt="SRP" class="logo-img">
-                <div class="logo-details">
-                  <h4>SRP</h4>
-                  <p>Protocollo per la coltivazione sostenibile del riso.</p>
-                </div>
-              </div>
-
-              <!-- Partner 8 -->
-              <div class="logo-card">
-                <img src="img/smeta4pillarsLogo.webp" alt="SMETA 4PILLARS" class="logo-img">
-                <div class="logo-details">
-                  <h4>SMETA 4PILLARS</h4>
-                  <p>Responsabilità sociale per essere inseriti nel “supplier ethical data exchange” (Sedex)</p>
-                </div>
-              </div>
-
-            </div>
-
+            <p class="item-text">Doniamo cibo a chi ne ha più bisogno con il Banco Alimentare e sosteniamo i progetti
+              locali.</p>
           </div>
+
+          <div class="bento-item ">
+            <h5 class="item-title">Cura quotidiana</h5>
+            <h2 class="item-value">Welfare</h2>
+            <p class="item-text">Proteggiamo i dipendenti con programmi di salute, polizze extra e premi che valorizzano
+              l'impegno di tutti.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-highlights card-theme-environmental">
+      <div class="container card-theme-governance">
+        <div class="section-header">
+          <h5>Come lavoriamo</h5>
+          <h3>Trasparenza e correttezza</h3>
+          <p>Scegliamo regole chiare, comportamenti etici e collaborazioni che fanno bene all'ambiente.</p>
         </div>
-      </article>
-    </div>
-  </section>
+        <article class="bento-container">
+          <div class="bento-item">
+            <h5 class="item-title">Patto con la terra</h5>
+            <h2 class="item-value">Carta del Riso</h2>
+            <p class="item-text">Un impegno in otto regole fondamentali per una coltivazione sostenibile, firmato dai
+              nostri
+              risicoltori.</p>
+          </div>
 
-  <!-- Sezione download report -->
-  <section id="report" class="section section-report">
-    <div class="container report-panel">
-      <div>
-        <h2>Report di sostenibilità 2024</h2>
-        <p>Accedi al documento ufficiale per approfondire i risultati, i programmi e le strategie di Riso Gallo per un
-          futuro più sostenibile.</p>
-        <br>
-        <a class="btn-gallo" href="docs/Riso-Gallo_report_ITA.pdf" download="Report_Sostenibilita_Riso_Gallo_2024.pdf">
-          <span class="testo-pulsante">Download PDF</span>
-        </a>
-      </div>
-      <div class="report-actions">
-       <a href="docs/Riso-Gallo_report_ITA.pdf" target="_blank">
-  <img src="img/reportCover.webp" alt="Copertina del report di sostenibilità" class="report-cover">
-</a>
+          <div class="bento-item">
+            <h5 class="item-title">Etica condivisa</h5>
+            <h2 class="item-value">Modello 231</h2>
+            <p class="item-text">Il nostro codice di condotta quotidiano per garantire legalità e trasparenza in ogni
+              attività.</p>
+          </div>
 
+          <div class="bento-item ">
+            <h5 class="item-title">Nuova vita agli scarti</h5>
+            <h2 class="item-value">Partnership</h2>
+            <p class="item-text">Insieme a Rice House e Mogu trasformiamo i residui della nostra produzione in materiali
+              per il design
+              e l'edilizia.</p>
+          </div>
+
+          <div class="bento-item col-span-3">
+            <h5 class="item-title">Eccellenza garantita</h5>
+            <h2 class="item-value">Fiducia globale</h2>
+            <p class="item-text">La nostra qualità è verificata e promossa dai più autorevoli enti internazionali.</p>
+            <div class="logo-carousel"
+              data-flickity='{"autoPlay": 3000, "wrapAround": true, "pauseAutoPlayOnHover": true,"pageDots": false}'>
+              <!-- Partner 1 -->
+              <div class="logo-card">
+                <img src="img/brcgsLogo.webp" alt="BRGSC" class="logo-img">
+                <div class="logo-details">
+                  <h4>BRGSC</h4>
+                  <p>Standard globale per la massima sicurezza alimentare.</p>
+                </div>
+              </div>
+
+              <!-- Partner 2 -->
+              <div class="logo-card">
+                <img src="img/ifsLogo.webp" alt="IFS" class="logo-img">
+                <div class="logo-details">
+                  <h4>IFS</h4>
+                  <p>Garanzia di qualità per la grande distribuzione europea.</p>
+                </div>
+              </div>
+
+              <!-- Partner 3 -->
+              <div class="logo-card">
+                <img src="img/aicLogo.webp" alt="AIC" class="logo-img">
+                <div class="logo-details">
+                  <h4>AIC</h4>
+                  <p>Certificazione ufficiale per i nostri prodotti senza glutine.</p>
+                </div>
+              </div>
+
+              <!-- Partner 4 -->
+              <div class="logo-card">
+                <img src="img/kosherLogo.webp" alt="Kosher" class="logo-img">
+                <div class="logo-details">
+                  <h4>Kosher</h4>
+                  <p>Prodotti conformi alle regole della tradizione ebraica.</p>
+                </div>
+              </div>
+
+              <!-- Partner 5 -->
+              <div class="logo-card">
+                <img src="img/halalLogo.webp" alt="Halal" class="logo-img">
+                <div class="logo-details">
+                  <h4>Halal</h4>
+                  <p>Alimenti idonei secondo i precetti della religione islamica.</p>
+                </div>
+              </div>
+
+              <!-- Partner 6 -->
+              <div class="logo-card">
+                <img src="img/fsaLogo.webp" alt="FSA" class="logo-img">
+                <div class="logo-details">
+                  <h4>FSA</h4>
+                  <p>Verifica internazionale per l'agricoltura sostenibile.</p>
+                </div>
+              </div>
+
+              <!-- Partner 7 -->
+              <div class="logo-card">
+                <img src="img/srpLogo.webp" alt="SRP" class="logo-img">
+                <div class="logo-details">
+                  <h4>SRP</h4>
+                  <p>Protocollo mondiale per la risicoltura responsabile.</p>
+                </div>
+              </div>
+
+              <!-- Partner 8 -->
+              <div class="logo-card">
+                <img src="img/smeta4pillarsLogo.webp" alt="SMETA 4PILLARS" class="logo-img">
+                <div class="logo-details">
+                  <h4>SMETA 4PILLARS</h4>
+                  <p>Attestato del nostro impegno etico e di responsabilità sociale.</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </article>
       </div>
-    </div>
-  </section>
-</main>
+    </section>
+
+    <!-- Sezione download report -->
+    <section id="report" class="section section-report">
+      <div class="container report-panel">
+        <div>
+          <h5>Report di sostenibilità 2024</h5>
+          <h2>Sfoglia il nostro ultimo report</h2>
+          <p>Abbiamo raccolto qui tutte le tappe del nostro viaggio.</p>
+          <p> Leggi il documento completo per scoprire i
+            risultati che abbiamo raggiunto insieme e i prossimi passi verso un futuro più verde.</p>
+          <br>
+          <a class="btn-gallo" href="docs/Riso-Gallo_report_ITA.pdf"
+            download="Report_Sostenibilita_Riso_Gallo_2024.pdf">
+            <span class="testo-pulsante">Scarica il PDF</span>
+          </a>
+        </div>
+        <div class="report-actions">
+          <a href="docs/Riso-Gallo_report_ITA.pdf" target="_blank">
+            <img src="img/reportCover.webp" alt="Copertina del report di sostenibilità" class="report-cover">
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
   <!-- Footer -->
   <footer class="site-footer">
     <div class="container footer-inner">

@@ -246,7 +246,7 @@ pointer-events: auto;
   box-sizing: border-box;
   width: min(calc(100vw - 8px), 425px);
   height: auto;
-  max-height: calc(100vh - 2rem);
+  max-height: calc(100dvh - 2rem);
   margin: 0;
   overflow: auto;
   background: #ffffff;
@@ -286,7 +286,7 @@ pointer-events: auto;
 .hero {
   padding-top: 200px;
   padding-bottom: 2rem;
-  min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   align-items: flex-end;
   background-image: url("../img/bannerSostenibilita.webp");
