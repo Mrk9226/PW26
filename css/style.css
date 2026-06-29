@@ -286,15 +286,14 @@ pointer-events: auto;
 .hero {
   padding-top: 200px;
   padding-bottom: 2rem;
-  min-height: 100dvh;
+  min-height: 100svh;
   display: flex;
-  align-items: flex-end;
-  background-image: url("../img/bannerSostenibilita.webp");
+  align-items: flex-start;
+  background-image: url("../img/coverArt.webp");
   background-size: cover;
   background-position: center;
   position: relative;
-  overflow: hidden;
-  background-attachment: fixed;
+  overflow: hidden; 
 }
 
 
@@ -302,10 +301,11 @@ pointer-events: auto;
   position: relative;
   display: grid;
   gap: 2rem;
-  align-items: flex-end;    
+  align-items: flex-end;  
+    
 }
 
-.hero h2 {  
+.hero h1 {  
   max-width: 760px;   
 }
 

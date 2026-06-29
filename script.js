@@ -56,3 +56,25 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const items = document.querySelectorAll('.bento-item');
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.15,
+    rootMargin: "0px 0px -20px 0px"
+  });
+
+  items.forEach(item => {
+    item.classList.add('reveal');
+    observer.observe(item);
+  });
+});
