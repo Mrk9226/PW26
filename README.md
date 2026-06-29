@@ -22,7 +22,6 @@ Il file HTML è organizzato in sezioni semantiche principali:
 - `#hero`: Apertura con titolo principale e pulsante di navigazione.
 - `#vision`: Spazio dedicato alla filosofia aziendale con media integrati.
 - `#highlights`: Contenitore principale (`<main>`) con classe tematica `card-theme-environmental` per la gestione dei dati su energia e risorse.
-- `.footer-middle` & `.footer-bottom`: Note accademiche, disclaimer del progetto e informazioni di copyright.
 
 ## 🛠️ Tecnologie Utilizzate
 - **HTML5**: Uso di tag semantici (`<section>`, `<article>`, `<main>`).
