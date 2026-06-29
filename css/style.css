@@ -301,7 +301,6 @@ pointer-events: auto;
   position: relative;
   display: grid;
   gap: 2rem;
-  align-items: flex-end;  
     
 }
 
@@ -356,64 +355,6 @@ img {
   }
 }
 
-.section-label {
-  display: grid;
-  gap: 0.75rem;
-}
-
-.box-note {
-  color: var(--muted);  
-  line-height: 1.7;  
-}
-
-
-.fact-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  gap: 0.85rem;
-}
-
-.fact-list li {
-  padding: 0.85rem 1rem;
-  border-radius: 18px;
-  background: #f4f7f8;
-  color: var(--text);
-}
-
-.fact-list strong {
-  display: block;  
-  color: var(--primary);
-}
-
-.card-theme-environmental {
-  border-color: rgba(15, 92, 46, 0.18);
-}
-
-.card-theme-environmental .card-number {
-  background: rgba(15, 92, 46, 0.14);
-  color: #0f5c2e;
-}
-
-.card-theme-social {
-  border-color: rgba(37, 99, 235, 0.18);
-}
-
-.card-theme-social .card-number {
-  background: rgba(37, 99, 235, 0.14);
-  color: #2563eb;
-}
-
-.card-theme-governance {
-  border-color: rgba(168, 85, 247, 0.18);
-}
-
-.card-theme-governance .card-number {
-  background: rgba(168, 85, 247, 0.14);
-  color: #7c3aed;
-}
-
 /* Report section */
 .report-panel {
   display: grid;
@@ -456,41 +397,81 @@ img {
 }
 
 /* Footer */
-.site-footer {
-  padding: 2rem 0;
-  background: var(--text);
-  border-top: 1px solid var(--border);
+.site-footer {  
+  background: var(--text);  
+  /* Arrotonda solo gli angoli superiori creando un effetto cupola */
+  border-top-left-radius: 50% 80px;
+  border-top-right-radius: 50% 80px;
+  margin: 0 -30px;
+  padding: 80px 2rem 2rem; 
+  text-align: center; /* Centra i testi internamente */
 }
 
+/* Gestione dei paragrafi generali nel footer */
+.site-footer p {
+  color: var(--surface);
+  margin: 0; /* Rimuove margini di default che sballano le distanze */
+}
+
+/* Contenitore interno: passa a colonna per gestire i 3 livelli */
 .footer-inner {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: 2rem; /* Spazio generoso e uniforme tra le 3 sezioni */
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
+/* 1. Navigazione superiore */
 .footer-nav {
   display: flex;
-  gap: 1rem;
+  gap: 2rem; /* Più spazio tra i link di navigazione */
 }
 
 .footer-nav a {
-  color: var(--muted);
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color var(--animation);
 }
 
 .footer-nav a:hover {
+  color: var(--primary-soft); /* I link si illuminano al passaggio */
+}
+
+/* 2. Nota accademica centrale */
+.academic-note {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.disclaimer {
+  display: block; /* Sposta il disclaimer sulla riga sotto */
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--primary);
+  font-style: italic;
+}
+
+/* 3. Copyright inferiore */
+.footer-bottom {
+  width: 100%;
+  border-top: 1px solid rgba(255, 255, 255, 0.1); /* Linea sottile di divisione */
+  padding-top: 1.5rem;
+}
+
+.copyright {
+  font-size: 0.8rem;
   color: var(--primary);
 }
 
+
 /* Responsive */
+
+/* --- TABLET (Sotto gli 800px) --- */
 @media (max-width: 800px) {
-  
-  .footer-inner {
-   /* flex-direction: column;*/
-    align-items: flex-start;
-  }
-  
-   .brand-logo {
+  .brand-logo {
     height: 120px;
   }
 
@@ -502,12 +483,9 @@ img {
   .report-panel {
     grid-template-columns: 1fr;
   }
-
- 
-
- 
 }
 
+/* --- SMARTPHONE MEDI (Sotto i 680px) --- */
 @media (max-width: 680px) {
   html {
     scroll-padding-top: 120px;
@@ -528,18 +506,10 @@ img {
   .header-inner {
     padding-right: 1rem;
   }
-
-  .hero-content,
-  .report-panel {
-    padding: 1rem;
-  }
-
-  .report-panel {
-    grid-template-columns: 1fr;
-  }
-
+    
 }
 
+/* --- SMARTPHONE PICCOLI (Sotto i 520px) --- */
 @media (max-width: 520px) {
   .card {
     padding: 1.4rem;
@@ -554,5 +524,12 @@ img {
     display: block;
     width: fit-content;
     margin: 0 auto;
+  }
+
+  /* Ottimizzazione Cupola Footer per schermi molto stretti */
+  .site-footer {
+    border-top-left-radius: 50% 40px;  /* Riduce l'altezza della cupola */
+    border-top-right-radius: 50% 40px; /* Evita che il footer "rubi" troppo spazio verticale */
+    padding-top: 50px;                 /* Riduce il padding superiore di conseguenza */
   }
 }

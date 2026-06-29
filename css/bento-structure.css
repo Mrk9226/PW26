@@ -85,7 +85,7 @@
   transform: translateY(40px) scale(0.95);
   animation-duration: 0.8s;
   animation-fill-mode: forwards;
-  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  animation-timing-function: var(--animation);
 }
 
 @keyframes bentoFadeIn {
