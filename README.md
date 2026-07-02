@@ -1,34 +1,135 @@
-# Report Sostenibilità Riso Gallo
+# 🌾 Report di Sostenibilità – Riso Gallo
 
-Una landing page istituzionale e reattiva focalizzata sulla presentazione del Report di Sostenibilità 2024. Il sito evidenzia l'impegno ambientale, la valorizzazione del territorio e i traguardi raggiunti.
+Landing page responsive realizzata come Project Work universitario con l'obiettivo di presentare in modo chiaro, accessibile e coinvolgente i principali risultati del Report di Sostenibilità 2024 di Riso Gallo.
 
-> ⚠️ **Nota Didattica**: Questo sito è un progetto universitario non ufficiale realizzato a scopo puramente illustrativo e accademico dedicato alla sostenibilità di Riso Gallo S.p.A.
+> ⚠️ **Progetto didattico non ufficiale**
+>
+> Questo sito è stato realizzato esclusivamente a scopo accademico e non è affiliato né approvato da Riso Gallo S.p.A. Tutti i contenuti sono stati rielaborati a fini formativi.
 
-## 📌 Indice
-- [Funzionalità](#-funzionalità)
-- [Struttura del Codice](#-struttura-del-codice)
-- [Tecnologie Utilizzate](#-tecnologie-utilizzate)
-- [Installazione e Sviluppo](#-installazione-e-sviluppo)
-- [Autore e Crediti](#-autore-e-crediti)
+---
 
-## ✨ Funzionalità
-- **Sezione Hero d'Impatto**: Introduzione chiara con invito all'azione (CTA) diretto al report.
-- **Sezione Vision**: Layout a due colonne (testo e immagine) che racconta i valori aziendali.
-- **Bento Grid Highlights**: Struttura a blocchi (Bento UX) per mostrare i dati e i KPI ambientali.
-- **Design Sostenibile**: Ottimizzazione delle immagini in formato moderno `.webp` per ridurre il peso della pagina.
+## 🎯 Obiettivo del progetto
 
-## 🛠️ Tecnologie Utilizzate
-- **HTML5**: Uso di tag semantici (`<section>`, `<article>`, `<main>`).
-- **CSS3**: Layout avanzati (Grid/Flexbox) e gestione dei temi colore.
-- **Immagini di nuova generazione**: Formato `.webp` per alte prestazioni.
+L'obiettivo principale è trasformare un documento istituzionale complesso in un'esperienza web moderna, facilmente consultabile e ottimizzata per diversi dispositivi.
 
-## 🚀 Installazione e Sviluppo
-1. Clona la cartella del progetto sul tuo computer.
-2. Assicurati di avere una cartella denominata `img/` contenente l'immagine `maniUomo.webp`.
-3. Apri il file `index.html` in un qualsiasi browser web oppure usa un server locale come *Live Server* su VS Code.
+Il progetto si concentra su:
 
-## 🎓 Autore e Crediti
-- **Tipo di Progetto**: Project Work universitario.
-- **Corso di Laurea**: Laurea Triennale in Informatica per le aziende digitali (L-31).
-- **Sviluppatore**: Marco Salsotto.
-- **Copyright**: © 2026 Marco Salsotto. Tutti i diritti riservati.
+- comunicazione chiara dei dati di sostenibilità;
+- valorizzazione dei risultati ambientali, sociali e di governance;
+- esperienza utente intuitiva;
+- accessibilità e semantica HTML;
+- prestazioni e ottimizzazione delle risorse.
+
+---
+
+## ✨ Caratteristiche principali
+
+### Hero introduttiva
+Presentazione immediata del tema della sostenibilità con una call-to-action che guida l'utente all'esplorazione dei risultati raggiunti.
+
+### Sezione Visione
+Introduzione ai valori e alla filosofia aziendale attraverso una combinazione di contenuto testuale e supporto visivo.
+
+### Sezione Progressi
+Raccolta dei principali indicatori di sostenibilità organizzati tramite layout Bento Grid:
+
+- risultati ambientali;
+- iniziative sociali;
+- governance e trasparenza;
+- certificazioni di qualità.
+
+### Download del report
+Accesso diretto al documento PDF completo di approfondimento.
+
+### Design responsive
+Interfaccia ottimizzata per:
+
+- desktop;
+- tablet;
+- smartphone.
+
+---
+
+## ♿ Accessibilità
+
+Durante lo sviluppo sono state adottate diverse buone pratiche:
+
+- utilizzo di tag HTML semantici;
+- gerarchia corretta dei titoli;
+- testi alternativi per le immagini informative;
+- immagini decorative escluse dalla lettura degli screen reader;
+- navigazione da tastiera;
+- menu mobile accessibile tramite attributi ARIA;
+- focus management per gli elementi interattivi.
+
+---
+
+## 🛠️ Tecnologie utilizzate
+
+- **HTML5**
+- **CSS3**
+- **JavaScript Vanilla**
+- **Flickity** per il carosello delle certificazioni
+- **WebP / AVIF** per l'ottimizzazione delle immagini
+
+---
+
+## 📂 Struttura del progetto
+
+```text
+PW26/
+│
+├── css/
+│   ├── style.css
+│   ├── bento-structure.css
+│   ├── btn-gallo.css
+│   ├── scroller.css
+│   └── flickity.css
+│
+├── js/
+│   ├── script.js
+│   └── flickity.pkgd.min.js
+│
+├── img/
+├── docs/
+│
+├── index.html
+└── README.md
+```
+
+---
+
+## 🚀 Avvio del progetto
+
+1. Clonare o scaricare il repository.
+2. Aprire il progetto in Visual Studio Code.
+3. Avviare un server locale (es. Live Server).
+4. Aprire il browser all'indirizzo generato.
+
+---
+
+## 🎓 Contesto accademico
+
+**Project Work**
+
+Corso di Laurea Triennale in Informatica per le Aziende Digitali (L-31)
+
+Il progetto è stato sviluppato con particolare attenzione a:
+
+- progettazione dell'interfaccia;
+- organizzazione dei contenuti;
+- accessibilità;
+- sviluppo front-end;
+- ottimizzazione delle prestazioni.
+
+---
+
+## 👨‍💻 Autore
+
+**Marco Salsotto**
+
+Automation Senior Technician
+
+Project Work Universitario – 2026
+
+© 2026 Marco Salsotto. Tutti i diritti riservati.
