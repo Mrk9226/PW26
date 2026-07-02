@@ -17,12 +17,6 @@ Una landing page istituzionale e reattiva focalizzata sulla presentazione del Re
 - **Bento Grid Highlights**: Struttura a blocchi (Bento UX) per mostrare i dati e i KPI ambientali.
 - **Design Sostenibile**: Ottimizzazione delle immagini in formato moderno `.webp` per ridurre il peso della pagina.
 
-## 🗂️ Struttura del Codice
-Il file HTML è organizzato in sezioni semantiche principali:
-- `#hero`: Apertura con titolo principale e pulsante di navigazione.
-- `#vision`: Spazio dedicato alla filosofia aziendale con media integrati.
-- `#highlights`: Contenitore principale (`<main>`) con classe tematica `card-theme-environmental` per la gestione dei dati su energia e risorse.
-
 ## 🛠️ Tecnologie Utilizzate
 - **HTML5**: Uso di tag semantici (`<section>`, `<article>`, `<main>`).
 - **CSS3**: Layout avanzati (Grid/Flexbox) e gestione dei temi colore.
