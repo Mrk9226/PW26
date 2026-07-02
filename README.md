@@ -128,8 +128,6 @@ Il progetto è stato sviluppato con particolare attenzione a:
 
 **Marco Salsotto**
 
-Automation Senior Technician
-
-Project Work Universitario – 2026
+Project Work UniPegaso – 2026
 
 © 2026 Marco Salsotto. Tutti i diritti riservati.
