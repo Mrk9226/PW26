@@ -11,7 +11,7 @@
   overflow: hidden;
 }
 
-/* Allineo le schede al centro verticalmente all'interno del modulo */
+/* Ho allineato le schede verticalmente per mantenere una presentazione più ordinata del carosello. */
 .logo-carousel .flickity-slider {
   display: flex;
   align-items: center;
@@ -25,7 +25,7 @@
   padding: 16px;
   background: white;
   border-radius: 8px;
-  /* Creo un bordo trasparente iniziale per evitare scatti quando compare l'hover */
+  /* Ho mantenuto un bordo inizialmente trasparente per evitare movimenti visivi durante l'interazione. */
   border: 1px transparent solid ; 
   display: flex;
   align-items: center;
@@ -35,7 +35,7 @@
   transition: border-radius var(--animation), border var(--animation);
 }
 
-/* Di base tengo il logo grande, centrato e in bianco e nero */
+/* Ho scelto una rappresentazione monocromatica per mantenere il carosello elegante e non invasivo. */
 .logo-img {
   width: 120px;
   height: 70px;
@@ -46,7 +46,7 @@
   transition: width var(--animation), filter var(--animation), opacity var(--animation), margin var(--animation);
 }
 
-/* Nascondo i dettagli azzerando la larghezza */
+/* Ho nascosto i dettagli con una transizione di larghezza per non appesantire la vista iniziale. */
 .logo-details {
   width: 0;
   overflow: hidden;
@@ -64,7 +64,7 @@
   white-space: nowrap;
 }
 
-/* Imposto una larghezza minima fissa per non far andare a capo il testo durante l'animazione */
+/* Ho fissato una larghezza minima per evitare rotture di layout durante l'animazione. */
 .logo-details p {
   margin: 0;
   font-size: 12px;
@@ -77,7 +77,7 @@
   border: var(--border);
 }
 
-/* Al passaggio del mouse rimpicciolisco il logo e lo sposto a sinistra per fare spazio */
+/* Ho ridotto il logo al passaggio del mouse per liberare spazio ai dettagli descrittivi. */
 .logo-card:hover .logo-img {
   filter: none;
   opacity: 1;
@@ -85,7 +85,7 @@
   margin: 0;
 }
 
-/* Espando l'area dei dettagli per mostrare il testo */
+/* Ho ampliato l'area dei dettagli per rendere l'interazione più chiara e leggibile. */
 .logo-card:hover .logo-details {
   width: 164px;
   opacity: 1; 

@@ -1,4 +1,4 @@
-/* Stili globali e reset base */
+/* Ho separato i token cromatici e i reset base per garantire coerenza e manutenzione del layout. */
 :root {
   --bg: #f7f9f8;
   --surface: #ffffff;
@@ -47,6 +47,8 @@ main {
 
 .container {
   max-width: 100%;
+  width: min(1440px, calc(100% - 4rem));
+  margin: 0 auto;
 }
 
 .container,
@@ -66,11 +68,6 @@ a {
   font: inherit;
 }
 
-.container {
-  width: min(1440px, calc(100% - 4rem));
-  margin: 0 auto;
-}
-
 
 h1,
 h2,
@@ -82,6 +79,14 @@ h3 {
 h2 {  
  font-size: clamp(25px, 4.15vw, 47px);
   margin:0 0 28px 0;
+}
+
+.item-value {
+  font-size: clamp(25px, 4.15vw, 47px);
+  margin: 0 0 14px 0;
+  line-height: 1.15;
+  font-family: 'Marcellus', serif;
+  font-weight: 400;
 }
 h1{
    font-size: clamp(43px, 8.3vw, 80px);
@@ -107,7 +112,30 @@ a {
   text-decoration: none;
 }
 
-/* Header e navigazione */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--primary-dark);
+  outline-offset: 3px;
+}
+
+/* Ho evidenziato il focus visibile per supportare la navigazione da tastiera. */
+
+.eyebrow {
+  font-size: clamp(0.8rem, 1.4vw, 0.95rem);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--primary);
+  margin: 0 0 0.8rem;
+  font-weight: 600;
+}
+
+.logo-title {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0 0 0.35rem;
+}
+
+/* Ho strutturato l'header come elemento fisso per mantenere accessibile la navigazione nelle sezioni lunghe. */
 .site-header {
   background: transparent;
   position: fixed;
@@ -148,13 +176,13 @@ a {
 
 .main-nav {
   display: flex;
-  align-items: center; 
-  gap: 1.5rem;
+  align-items: center;
+  gap: 2.5rem;
   height: 60px;
   padding-left: 60px;
   padding-right: 30px;
   z-index: 1;
-  border-radius: 100px; 
+  border-radius: 100px;
   background: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   max-width: calc(100vw - 4rem);
@@ -171,12 +199,18 @@ a {
   transition: color var(--animation), background var(--animation), padding var(--animation), margin var(--animation);
 }
 
+.main-nav a.active,
 .main-nav a:hover {
   color: var(--text);
   background: var(--primary-soft);
   padding: 0.5rem 1rem;
   margin: -0.5rem -1rem;  
 }
+
+.main-nav a.active {  
+  background: var(--bg); 
+}
+
 
 .header-inner {
   position: relative;
@@ -276,13 +310,20 @@ pointer-events: auto;
   font-weight: 700;  
   padding: 0.85rem 0;
   border-bottom: 1px solid rgba(31, 41, 55, 0.08);
+  border-radius: 0.5rem;
+}
+
+.mobile-nav a:hover,
+.mobile-nav a:focus-visible {
+  background: var(--primary-soft);
+  padding-left: 0.5rem;
 }
 
 .mobile-nav a:last-child {
   border-bottom: none;
 }
 
-/* Hero section */
+/* Ho dedicato l'hero a una presentazione immediata del tema, lasciando spazio al messaggio principale. */
 .hero {
   padding-top: 200px;
   padding-bottom: 2rem;
@@ -315,7 +356,7 @@ pointer-events: auto;
 
 
 
-/* Sezioni del sito */
+/* Ho usato sezioni omogenee per garantire continuità e leggibilità tra i blocchi informativi. */
 .section {
   padding: 3rem 0;
 }
@@ -355,7 +396,21 @@ img {
   }
 }
 
-/* Report section */
+/* Ho ridotto le transizioni in presenza di preferenze accessibili per evitare sovraccarichi sensoriali. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Ho separato il pannello del report in due colonne per bilanciare testo e supporto visivo. */
 .report-panel {
   display: grid;
   grid-template-columns: minmax(280px, 1.2fr) minmax(220px, 0.8fr);
@@ -396,7 +451,7 @@ img {
   max-width: 860px;   
 }
 
-/* Footer */
+/* Ho mantenuto il footer con un trattamento grafico distintivo per chiudere la pagina con continuità. */
 .site-footer {  
   background: var(--text);  
   /* Arrotonda solo gli angoli superiori creando un effetto cupola */
@@ -467,9 +522,9 @@ img {
 }
 
 
-/* Responsive */
+/* Ho scelto breakpoint specifici per preservare la leggibilità su tablet e dispositivi mobili. */
 
-/* --- TABLET (Sotto gli 800px) --- */
+/* Ho definito un breakpoint tablet per adattare il layout senza perdere proporzioni. */
 @media (max-width: 800px) {
   .brand-logo {
     height: 120px;
@@ -485,7 +540,7 @@ img {
   }
 }
 
-/* --- SMARTPHONE MEDI (Sotto i 680px) --- */
+/* Ho ottimizzato la navigazione mobile per mantenere il contenuto leggibile su schermi ridotti. */
 @media (max-width: 680px) {
   html {
     scroll-padding-top: 120px;
@@ -509,7 +564,7 @@ img {
     
 }
 
-/* --- SMARTPHONE PICCOLI (Sotto i 520px) --- */
+/* Ho ridotto i dettagli del footer sui piccoli schermi per evitare spazi vuoti eccessivi. */
 @media (max-width: 520px) {
   .card {
     padding: 1.4rem;

@@ -1,13 +1,13 @@
 .btn-gallo {
   position: relative;
-  /* Controllo i livelli per non far coprire il testo dall'animazione dello sfondo */
+  /* Ho regolato i livelli di stacking per evitare che l'effetto di sfondo copra il testo. */
   z-index: 1;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   padding: 15px 50px;
   cursor: pointer;
-  /* Nascondo lo sfondo circolare quando si espande oltre i bordi del bottone */
+  /* Ho contenuto l'effetto di sfondo entro i bordi del pulsante per mantenere la forma pulita. */
   overflow: hidden;
   user-select: none;
   background: var(--primary);
@@ -19,39 +19,39 @@
   white-space: normal;
 }
 
-/* Gestisco l'effetto di scorrimento verticale del testo (finto duplicato con text-shadow) */
+/* Ho simulato il movimento del testo con ombre per ottenere un effetto dinamico senza aggiungere elementi extra. */
 .btn-gallo .testo-pulsante {
   display: inline-block;
   text-align: center;
   line-height: 1;
-  /* Rendo il testo originale trasparente per mostrare solo le ombre colorate */
+  /* Ho reso il testo iniziale trasparente per far emergere l'effetto cromatico in modo elegante. */
   color: transparent;
   transform: translateY(0);
   transition: transform var(--animation), text-shadow var(--animation);
-  /* Creo il testo visibile iniziale (bianco) e preparo la seconda ombra nascosta in basso */
+  /* Ho preparato una doppia ombra per suggerire il passaggio tra lo stato base e quello attivo. */
   text-shadow: 0 0 0 #ffffff, 0 3rem 0 transparent;
 }
 
-/* Creo la forma circolare nascosta sotto al pulsante per l'effetto hover */
+/* Ho costruito una forma nascosta sotto il pulsante per ottenere un effetto di riempimento più raffinato. */
 .btn-gallo::before {
   content: "";
   position: absolute;
-  /* Posiziono lo sfondo sotto al testo ma sopra la base del bottone */
+  /* Ho posizionato lo sfondo dietro il testo per mantenere la leggibilità durante l'animazione. */
   z-index: -1;
   left: 50%;
   top: 100%;
   width: 100%;
   height: 0;
-  /* Uso il padding per mantenere la forma perfettamente quadrata/circolare */
+  /* Ho usato padding per controllare la forma dell'effetto senza introdurre elementi aggiuntivi. */
   padding-top: 100%;
   transform: translate(-50%, 0);
-  /* Arrotondo solo la parte superiore per creare una cupola che sale */
+  /* Ho arrotondato solo la parte superiore per ottenere un movimento più naturale dell'elemento. */
   border-radius: 50% 50% 0 0;
   background-color: var(--primary-dark);
   transition: all var(--animation) 0.05s, border-radius var(--animation) 0.22s;
 }
 
-/* Faccio salire lo sfondo scuro coprendo l'intero bottone e adattandosi agli angoli */
+/* Ho fatto salire lo sfondo scuro per garantire una transizione uniforme con gli angoli del bottone. */
 .btn-gallo:hover::before {
   top: 0;
   width: 101%;
@@ -60,7 +60,7 @@
   border-radius: inherit;
 }
 
-/* Sposto le ombre verso l'alto per far subentrare il secondo testo dal basso */
+/* Ho spostato le ombre verso l'alto per far apparire il testo alternativo in modo graduale. */
 .btn-gallo:hover .testo-pulsante {
   text-shadow: 0 -3rem 0 transparent, 0 0 0 #ffffff;
 }

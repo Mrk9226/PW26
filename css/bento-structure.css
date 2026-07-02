@@ -68,7 +68,7 @@
 .row-span-3 { grid-row: span 3; }
 
 
-/* Mobile Responsiveness */
+/* Ho adattato la griglia ai dispositivi piccoli per evitare sovrapposizioni e mantenere la leggibilità. */
 @media (max-width: 767px) {  
     .bento-container {
     grid-template-columns: 1fr;
@@ -79,7 +79,8 @@
   }
 }
 
-/* --- SOLO APPARIZIONE: Classi isolate aggiunte in coda --- */
+/* Ho mantenuto le classi di animazione in fondo al foglio per separarle dalla struttura principale. */
+/* Ho usato una transizione iniziale per rendere l'entrata delle card più fluida. */
 .reveal {
   opacity: 0;
   transform: translateY(40px) scale(0.95);
