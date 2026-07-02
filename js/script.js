@@ -45,112 +45,6 @@ function trapFocus(event) {
   }
 }
 
-function parseNumericValue(value) {
-  if (value === null || value === undefined) return null;
-  if (typeof value === 'number' && Number.isFinite(value)) return value;
-
-  const stringValue = String(value).trim().replace(/\s+/g, '');
-  if (!stringValue) return null;
-
-  const sign = stringValue.startsWith('-') ? -1 : 1;
-  const sanitized = stringValue.replace(/[+-]/g, '');
-  const cleaned = sanitized.replace(/[^\d,.-]/g, '');
-
-  if (!cleaned) return null;
-
-  if (cleaned.includes(',') && cleaned.includes('.')) {
-    const lastComma = cleaned.lastIndexOf(',');
-    const lastDot = cleaned.lastIndexOf('.');
-    const decimalSeparator = lastComma > lastDot ? ',' : '.';
-    const thousandSeparator = decimalSeparator === ',' ? '.' : ',';
-    const normalized = cleaned
-      .replace(new RegExp(`\\${thousandSeparator}`, 'g'), '')
-      .replace(decimalSeparator, '.');
-
-    return Number(normalized) * sign;
-  }
-
-  if (cleaned.includes(',')) {
-    return Number(cleaned.replace(/,/g, '.')) * sign;
-  }
-
-  if (cleaned.includes('.')) {
-    return Number(cleaned) * sign;
-  }
-
-  return Number(cleaned) * sign;
-}
-
-function getCounterSettings(element) {
-  const rawText = element.textContent.trim();
-  const dataTarget = element.dataset.target;
-  const targetValue = parseNumericValue(dataTarget ?? rawText);
-
-  if (targetValue === null) return null;
-
-  const className = Array.from(element.classList).find((cls) => cls.startsWith('count-to-'));
-  const classValue = className ? parseNumericValue(className.replace('count-to-', '')) : null;
-  const finalTarget = classValue ?? targetValue;
-
-  const prefix = element.dataset.prefix ?? rawText.match(/^[^0-9+-]*/)?.[0] ?? '';
-  const suffix = element.dataset.suffix ?? rawText.match(/[^0-9+-]*$/)?.[0] ?? '';
-  const decimalPlaces = Math.max(
-    0,
-    (String(dataTarget ?? className ?? rawText).match(/[.,](\d+)/)?.[1]?.length) ?? 0
-  );
-
-  return {
-    targetValue: finalTarget,
-    prefix,
-    suffix,
-    decimalPlaces,
-  };
-}
-
-// Formato i valori numerici per ottenere una lettura più leggibile durante l'animazione dei contatori.
-function formatCounterValue(value, { prefix = '', suffix = '', decimalPlaces = 0 }) {
-  const roundedValue = Number(value).toFixed(decimalPlaces);
-  const [whole, fractional = ''] = roundedValue.split('.');
-  const formattedWhole = whole.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
-  const decimalSeparator = decimalPlaces > 0 ? ',' : '';
-  const fractionalPart = decimalPlaces > 0 ? `${decimalSeparator}${fractional}` : '';
-
-  return `${prefix}${formattedWhole}${fractionalPart}${suffix}`;
-}
-
-// Avvio la numerazione solo quando il blocco è visibile per ridurre il carico computazionale.
-function animateCounter(element) {
-  if (!element || element.dataset.animated === 'true') return;
-
-  const settings = getCounterSettings(element);
-  if (!settings) return;
-
-  const { targetValue, prefix, suffix, decimalPlaces } = settings;
-  const duration = 1200;
-  const startValue = 0;
-  const startTime = performance.now();
-
-  element.textContent = formatCounterValue(startValue, { prefix, suffix, decimalPlaces });
-  element.dataset.animated = 'true';
-
-  const step = (currentTime) => {
-    const progress = Math.min((currentTime - startTime) / duration, 1);
-    const easedProgress = 1 - Math.pow(1 - progress, 3);
-    const currentValue = startValue + (targetValue - startValue) * easedProgress;
-
-    element.textContent = formatCounterValue(currentValue, { prefix, suffix, decimalPlaces });
-    element.setAttribute('aria-label', formatCounterValue(targetValue, { prefix, suffix, decimalPlaces }));
-
-    if (progress < 1) {
-      requestAnimationFrame(step);
-    } else {
-      element.setAttribute('aria-live', 'polite');
-    }
-  };
-
-  requestAnimationFrame(step);
-}
-
 menuToggle.addEventListener('click', (event) => {
   event.stopPropagation();
   handleMobileMenu();
@@ -201,7 +95,6 @@ document.addEventListener('DOMContentLoaded', () => {
       if (entry.isIntersecting) {
         // Attivo il blocco visibile e interrompo l'osservazione per ridurre operazioni non necessarie.
         entry.target.classList.add('active');
-        entry.target.querySelectorAll('.animate-number').forEach((counter) => animateCounter(counter));
         observer.unobserve(entry.target);
       }
     });
@@ -215,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
     item.classList.add('reveal');
     observer.observe(item);
   });
-  
+
   // Aggiorno lo stato attivo del menu per riflettere la sezione attualmente visibile.
 
   const sections = document.querySelectorAll('section[id]');
@@ -243,14 +136,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     },
-    
-      
-{
-  threshold: 0,
-  rootMargin: '-30% 0px -60% 0px'
-}
 
-    
+
+    {
+      threshold: 0,
+      rootMargin: '-30% 0px -60% 0px'
+    }
+
+
   );
 
   // Osservo tutte le sezioni per aggiornare il menu in modo coerente.

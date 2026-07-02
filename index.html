@@ -14,8 +14,9 @@
   <link rel="stylesheet" href="css/btn-gallo.css">
   <link rel="stylesheet" href="css/scroller.css">
   <link rel="stylesheet" href="css/flickity.css">
-  <script defer src="js/script.js"></script>
   <script src="js/flickity.pkgd.min.js"></script>
+  <script defer src="js/script.js"></script>
+  <script defer src="js/counter.js"></script>
   <link rel="icon" type="image/png" href="img/galloLogo.png">
 
 </head>
@@ -106,40 +107,67 @@
         <article class="bento-container">
           <div class="bento-item">
             <p class="eyebrow">Sole, acqua e vento</p>
-            <p class="item-value animate-number count-to-100" data-suffix="%">100%</p>
-            <p class="item-text">Tutta l'elettricità che usiamo arriva da fonti pulite e rinnovabili.</p>
+            <p class="item-value animate-number" data-target="100" data-suffix="%">
+              100%
+            </p>
+            <p class="item-text">
+              Tutta l'elettricità che usiamo arriva da fonti pulite e rinnovabili.
+            </p>
           </div>
+
           <div class="bento-item">
             <p class="eyebrow">Risparmio idrico</p>
-            <p class="item-value animate-number count-to--41.5" data-suffix="%">-41,5%</p>
-            <p class="item-text">Abbiamo ridotto l'acqua prelevata per ogni quintale di riso rispetto al 2023.</p>
+            <p class="item-value animate-number" data-target="-41.5" data-suffix="%">
+              -41,5%
+            </p>
+            <p class="item-text">
+              Abbiamo ridotto l'acqua prelevata per ogni quintale di riso rispetto al 2023.
+            </p>
           </div>
+
           <div class="bento-item">
             <p class="eyebrow">Aria più pulita</p>
-            <p class="item-value animate-number count-to--12.9" data-suffix="%">-12,9%</p>
-            <p class="item-text">Meno emissioni dirette di gas serra nell'atmosfera per ogni confezione creata.</p>
+            <p class="item-value animate-number" data-target="-12.9" data-suffix="%">
+              -12,9%
+            </p>
+            <p class="item-text">
+              Meno emissioni dirette di gas serra nell'atmosfera per ogni confezione creata.
+            </p>
           </div>
+
           <div class="bento-item">
             <p class="eyebrow">Meno imballaggi</p>
             <p class="item-value">Packaging ottimizzato</p>
-            <p class="item-text">Utilizziamo solo il materiale necessario per confezionare il riso in modo sicuro e
-              responsabile.</p>
+            <p class="item-text">
+              Utilizziamo solo il materiale necessario per confezionare il riso in modo sicuro e responsabile.
+            </p>
           </div>
+
           <div class="bento-item img col-span-2">
             <img src="img/campo.jpg" alt="" loading="lazy">
           </div>
+
           <div class="bento-item">
             <p class="eyebrow">Amici delle foreste</p>
-            <p class="item-value animate-number count-to-100" data-suffix="%">100%</p>
-            <p class="item-text">Tutto il nostro cartoncino è certificato FSC per proteggere i polmoni del mondo.</p>
+            <p class="item-value animate-number" data-target="100" data-suffix="%">
+              100%
+            </p>
+            <p class="item-text">
+              Tutto il nostro cartoncino è certificato FSC per proteggere i polmoni del mondo.
+            </p>
           </div>
+
           <div class="bento-item img">
             <img src="img/pack.webp" alt="" loading="lazy">
           </div>
+
           <div class="bento-item">
             <p class="eyebrow">Seconda vita ai rifiuti</p>
-            <p class="item-value animate-number count-to-81.7" data-suffix="%">81,7%</p>
-            <p class="item-text">Quasi la totalità dei nostri scarti viene recuperata e trasformata in nuova risorsa.
+            <p class="item-value animate-number" data-target="81.7" data-suffix="%">
+              81,7%
+            </p>
+            <p class="item-text">
+              Quasi la totalità dei nostri scarti viene recuperata e trasformata in nuova risorsa.
             </p>
           </div>
         </article>
@@ -160,31 +188,43 @@
         <article class="bento-container">
           <div class="bento-item">
             <p class="eyebrow">Agricoltori alleati</p>
-            <p class="item-value animate-number count-to-200">200</p>
-            <p class="item-text">Aziende agricole che coltivano con noi seguendo i più rigorosi standard di
-              sostenibilità mondiali.</p>
+            <p class="item-value animate-number" data-target="200">
+              200
+            </p>
+            <p class="item-text">
+              Aziende agricole che coltivano con noi seguendo i più rigorosi standard di sostenibilità mondiali.
+            </p>
           </div>
+
           <div class="bento-item img row-span-2">
             <img src="img/donna.webp" alt="" loading="lazy">
           </div>
+
           <div class="bento-item">
             <p class="eyebrow">Sicurezza del futuro</p>
-            <p class="item-value animate-number count-to-97.7" data-suffix="%">97,7%</p>
-            <p class="item-text">Delle nostre persone lavora con un contratto a tempo indeterminato, per costruire una
-              stabilità reale.</p>
-          </div>
-          <div class="bento-item  ">
-            <p class="eyebrow">Vicini al territorio</p>
-            <p class="item-value">Solidarietà</p>
-            <p class="item-text">Doniamo cibo a chi ne ha più bisogno con il Banco Alimentare e sosteniamo i progetti
-              locali.</p>
+            <p class="item-value animate-number" data-target="97.7" data-suffix="%">
+              97,7%
+            </p>
+            <p class="item-text">
+              Delle nostre persone lavora con un contratto a tempo indeterminato, per costruire una stabilità reale.
+            </p>
           </div>
 
-          <div class="bento-item ">
+          <div class="bento-item">
+            <p class="eyebrow">Vicini al territorio</p>
+            <p class="item-value">Solidarietà</p>
+            <p class="item-text">
+              Doniamo cibo a chi ne ha più bisogno con il Banco Alimentare e sosteniamo i progetti locali.
+            </p>
+          </div>
+
+          <div class="bento-item">
             <p class="eyebrow">Cura quotidiana</p>
             <p class="item-value">Welfare</p>
-            <p class="item-text">Proteggiamo i dipendenti con programmi di salute, polizze extra e premi che valorizzano
-              l'impegno di tutti.</p>
+            <p class="item-text">
+              Proteggiamo i dipendenti con programmi di salute, polizze extra e premi che valorizzano l'impegno di
+              tutti.
+            </p>
           </div>
         </article>
       </div>
@@ -320,7 +360,8 @@
         <div class="report-actions">
           <a href="docs/Riso-Gallo_report_ITA.pdf" target="_blank" rel="noopener noreferrer"
             aria-label="Apri il Report di Sostenibilità 2024 in formato PDF in una nuova finestra">
-            <img src="img/reportCover.webp" alt="Copertina del report di sostenibilità 2024" class="report-cover" loading="lazy">
+            <img src="img/reportCover.webp" alt="Copertina del report di sostenibilità 2024" class="report-cover"
+              loading="lazy">
           </a>
         </div>
       </div>
