@@ -28,14 +28,14 @@
 
 .bento-item { 
   border-radius: 16px;
-  padding: 24px;
+  padding: 16px;
   background: var(--bg);
   overflow: hidden;
   transition: transform var(--animation), background var(--animation), border-radius var(--animation);
 }
 
 .bento-item:hover{    
-    border-radius: 48px;
+    border-radius: 32px;
     background: var(--primary-soft);
 }
 
@@ -84,7 +84,7 @@
 .reveal {
   opacity: 0;
   transform: translateY(40px) scale(0.95);
-  animation-duration: 0.8s;
+  animation-duration: 0.4s;
   animation-fill-mode: forwards;
   animation-timing-function: var(--animation);
 }

@@ -72,20 +72,7 @@ document.addEventListener('keydown', trapFocus);
 
 // Avvio le interazioni al caricamento del DOM per garantire che gli elementi siano disponibili.
 document.addEventListener('DOMContentLoaded', () => {
-  const carousel = document.querySelector('.logo-carousel');
-  if (carousel && typeof Flickity !== 'undefined') {
-    const carouselOptions = {
-      pageDots: false,
-      wrapAround: true,
-      autoPlay: reducedMotionQuery.matches ? false : 2000,
-      pauseAutoPlayOnHover: true,
-      prevNextButtons: true,
-      accessibility: true,
-    };
-
-    new Flickity(carousel, carouselOptions);
-  }
-
+  
   // Attivo l'animazione delle card solo quando entrano nel viewport per migliorare le prestazioni.
   const items = document.querySelectorAll('.bento-item');
 

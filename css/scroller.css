@@ -1,7 +1,9 @@
 .logo-carousel {
-  position: relative;
-  padding: 16px 0;
+  position: relative; 
+  margin: 16px -8px;
+  border-radius:8px;
 }
+
 .logo-carousel img {
   border-radius:0;
 }
@@ -11,10 +13,12 @@
   overflow: hidden;
 }
 
-/* Ho allineato le schede verticalmente per mantenere una presentazione più ordinata del carosello. */
-.logo-carousel .flickity-slider {
-  display: flex;
-  align-items: center;
+.logo-carousel .flickity-page-dots .dot {
+  background: var(--muted);
+}
+
+.logo-carousel .flickity-page-dots .dot.is-selected {
+  background: var(--primary);
 }
 
 .logo-card {
@@ -72,21 +76,25 @@
   min-width: 164px;
 }
 
-.logo-card:hover {
+/* Si attiva sia in hover che se ha la classe selected */
+.logo-card:hover,
+.logo-card.is-selected {
   border-radius: 16px;  
   border: var(--border);
 }
 
-/* Ho ridotto il logo al passaggio del mouse per liberare spazio ai dettagli descrittivi. */
-.logo-card:hover .logo-img {
+/* Modifiche al logo */
+.logo-card:hover .logo-img,
+.logo-card.is-selected .logo-img {
   filter: none;
   opacity: 1;
   width: 70px;
   margin: 0;
 }
 
-/* Ho ampliato l'area dei dettagli per rendere l'interazione più chiara e leggibile. */
-.logo-card:hover .logo-details {
+/* Modifiche ai dettagli descrittivi */
+.logo-card:hover .logo-details,
+.logo-card.is-selected .logo-details {
   width: 164px;
   opacity: 1; 
   margin-left: 16px;

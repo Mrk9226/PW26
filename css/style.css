@@ -358,7 +358,7 @@ pointer-events: auto;
 
 /* Ho usato sezioni omogenee per garantire continuità e leggibilità tra i blocchi informativi. */
 .section {
-  padding: 3rem 0;
+  padding: 2rem 0;
 }
 
 .section-header {
@@ -390,25 +390,9 @@ img {
   border-radius: var(--radius);
 }
 
-@media (max-width: 680px) {
-  .vision-grid {
-    grid-template-columns: 1fr;
-  }
-}
 
-/* Ho ridotto le transizioni in presenza di preferenze accessibili per evitare sovraccarichi sensoriali. */
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
 
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
+
 
 /* Ho separato il pannello del report in due colonne per bilanciare testo e supporto visivo. */
 .report-panel {
@@ -561,14 +545,20 @@ img {
   .header-inner {
     padding-right: 1rem;
   }
-    
+
+  .vision-grid {
+    grid-template-columns: 1fr;
+  }    
 }
 
 /* Ho ridotto i dettagli del footer sui piccoli schermi per evitare spazi vuoti eccessivi. */
-@media (max-width: 520px) {
-  .card {
-    padding: 1.4rem;
-  }
+@media (max-width: 520px) {  
+
+.container {
+  max-width: 100%;
+  width: min(1440px, calc(100% - 2rem));
+  margin: 0 auto;
+}
 
   .report-actions {
     width: 100%;
@@ -586,5 +576,19 @@ img {
     border-top-left-radius: 50% 40px;  /* Riduce l'altezza della cupola */
     border-top-right-radius: 50% 40px; /* Evita che il footer "rubi" troppo spazio verticale */
     padding-top: 50px;                 /* Riduce il padding superiore di conseguenza */
+  }
+}
+
+/* Ho ridotto le transizioni in presenza di preferenze accessibili per evitare sovraccarichi sensoriali. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
