@@ -19,7 +19,8 @@
   white-space: normal;
 }
 
-/* Ho simulato il movimento del testo con ombre per ottenere un effetto dinamico senza aggiungere elementi extra. */
+/* Ho simulato il movimento del testo con ombre per ottenere un effetto dinamico 
+  senza aggiungere elementi extra. */
 .btn-gallo .testo-pulsante {
   display: inline-block;
   text-align: center;
